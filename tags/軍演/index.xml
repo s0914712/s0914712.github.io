@@ -4,32 +4,23 @@
     <title>軍演 on chen blog s091sdaf</title>
     <link>https://s0914712.github.io/tags/%E8%BB%8D%E6%BC%94/</link>
     <description>Recent content in 軍演 on chen blog s091sdaf</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 29 Oct 2024 10:07:47 +0600</lastBuildDate>
-    
-	<atom:link href="https://s0914712.github.io/tags/%E8%BB%8D%E6%BC%94/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://s0914712.github.io/tags/%E8%BB%8D%E6%BC%94/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用MLP分析臺海周邊海、空域動態</title>
       <link>https://s0914712.github.io/blog/post-1/</link>
       <pubDate>Tue, 29 Oct 2024 10:07:47 +0600</pubDate>
-      
       <guid>https://s0914712.github.io/blog/post-1/</guid>
-      <description>使用MLP分析臺海周邊海、空域動態 數據處理在現代資訊系統中至關重要。有效的數據處理能幫助組織從大量數據中提取出有價值的資訊，為後續的決策提供基礎。同時，良好的數據清理、轉換與整合過程能降低錯誤率，增加模型的可靠性。特別是在軍事、金融等高風險領域，數據處理的精確性直接影響任務成敗，以下就數據的清理流程與研究方法進行介紹。
-數據處理 國防部網站上有109年至113年每天的中共解放軍臺海周邊海、空域動態，雖然經過模糊化，但裡面每天出現的機種類型和區域已足夠進行分類和推理，經過資料的整理，統計出大約有20種機型，每天有不一樣的活動動態(如表一)，每一行代表一個時間點的軍事設備部署情況。對於每一行數據，程序創建一個圖，其中節點代表不同類型的軍事設備（如戰鬥機、轟炸機等），節點的值表示該設備的活動的區域代號。我們把它整理成CSV文件，藉由pandas的dataframe函式庫進行分析。
-   DATE J10 J11 J16 Y9EW Y8EW Y8ELINT Y8ASW Y8REC Y20 BZK WZ7 Z9 Y9CC SU30 H6 JH7 TB001 CH4 GJ2 KJ500     0601 2 0 0 0 0 0 0 0 0 0 3 0 0 2 0 0 0 0 0 0   0602 0 0 0 0 0 0 0 0 0 0 3 3 0 2 0 0 0 0 0 0    表一：整理後的資料集的一部分</description>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h1 id=&#34;使用mlp分析臺海周邊海空域動態&#34;&gt;使用MLP分析臺海周邊海、空域動態&lt;/h1&gt;&#xA;&lt;p&gt;數據處理在現代資訊系統中至關重要。有效的數據處理能幫助組織從大量數據中提取出有價值的資訊，為後續的決策提供基礎。同時，良好的數據清理、轉換與整合過程能降低錯誤率，增加模型的可靠性。特別是在軍事、金融等高風險領域，數據處理的精確性直接影響任務成敗，以下就數據的清理流程與研究方法進行介紹。&lt;/p&gt;&#xA;&lt;h2 id=&#34;數據處理&#34;&gt;數據處理&lt;/h2&gt;&#xA;&lt;p&gt;國防部網站上有109年至113年每天的中共解放軍臺海周邊海、空域動態，雖然經過模糊化，但裡面每天出現的機種類型和區域已足夠進行分類和推理，經過資料的整理，統計出大約有20種機型，每天有不一樣的活動動態(如表一)，每一行代表一個時間點的軍事設備部署情況。對於每一行數據，程序創建一個圖，其中節點代表不同類型的軍事設備（如戰鬥機、轟炸機等），節點的值表示該設備的活動的區域代號。我們把它整理成CSV文件，藉由pandas的dataframe函式庫進行分析。&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;DATE&lt;/th&gt;&#xA;          &lt;th&gt;J10&lt;/th&gt;&#xA;          &lt;th&gt;J11&lt;/th&gt;&#xA;          &lt;th&gt;J16&lt;/th&gt;&#xA;          &lt;th&gt;Y9EW&lt;/th&gt;&#xA;          &lt;th&gt;Y8EW&lt;/th&gt;&#xA;          &lt;th&gt;Y8ELINT&lt;/th&gt;&#xA;          &lt;th&gt;Y8ASW&lt;/th&gt;&#xA;          &lt;th&gt;Y8REC&lt;/th&gt;&#xA;          &lt;th&gt;Y20&lt;/th&gt;&#xA;          &lt;th&gt;BZK&lt;/th&gt;&#xA;          &lt;th&gt;WZ7&lt;/th&gt;&#xA;          &lt;th&gt;Z9&lt;/th&gt;&#xA;          &lt;th&gt;Y9CC&lt;/th&gt;&#xA;          &lt;th&gt;SU30&lt;/th&gt;&#xA;          &lt;th&gt;H6&lt;/th&gt;&#xA;          &lt;th&gt;JH7&lt;/th&gt;&#xA;          &lt;th&gt;TB001&lt;/th&gt;&#xA;          &lt;th&gt;CH4&lt;/th&gt;&#xA;          &lt;th&gt;GJ2&lt;/th&gt;&#xA;          &lt;th&gt;KJ500&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;0601&lt;/td&gt;&#xA;          &lt;td&gt;2&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;3&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;2&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;0602&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;3&lt;/td&gt;&#xA;          &lt;td&gt;3&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;2&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;表一：整理後的資料集的一部分&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>使用機器學習 預測軍事動態-西南空域篇</title>
       <link>https://s0914712.github.io/blog/post-3/</link>
       <pubDate>Tue, 29 Oct 2024 10:07:47 +0600</pubDate>
-      
       <guid>https://s0914712.github.io/blog/post-3/</guid>
-      <description>認識 Prophet Prophet 是一個由 Facebook Core Data Science Team 發表的開源代碼庫，用於時間序列預測，基於 Python 和 R 語言。相較於自行訓練時間序列預測模型，Prophet 的一些優點如下：‌</description>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h3 id=&#34;認識-prophet&#34;&gt;認識 Prophet&lt;/h3&gt;&#xA;&lt;p&gt;Prophet 是一個由 Facebook Core Data Science Team 發表的開源代碼庫，用於時間序列預測，基於 Python 和 R 語言。相較於自行訓練時間序列預測模型，Prophet 的一些優點如下：‌&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

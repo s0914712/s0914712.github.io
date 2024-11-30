@@ -11,7 +11,7 @@
   
   <meta name="theme-name" content="liva-hugo" />
   
-  <meta name="generator" content="Hugo 0.68.3" />
+  <meta name="generator" content="Hugo 0.139.3">
 
   <!-- plugins -->
   
@@ -150,7 +150,7 @@
         <div class="card-body px-0">
         
         <a href="/categories/ai%e8%a7%a3%e6%b1%ba%e8%bb%8d%e4%ba%8b%e5%95%8f%e9%a1%8c"
-            class="text-primary">A i解決軍事問題</a>
+            class="text-primary">Ai解決軍事問題</a>
         
         <a href="https://s0914712.github.io/blog/post-4/" class="h5 d-block my-3">使用機器學習 預測軍事動態-航母篇</a>
         <div class="mb-3 post-meta">
@@ -160,8 +160,10 @@
             <span>29 November 2024</span>
             
         </div>
-        <p class="card-text">中共的航母每次出航，海軍的弟兄又得要出去跟監，壓力超大，有沒有辦法預知他的出現呢? 我們蒐集到日本防衛省統合幕僚監部 下載 2023-2024年經過日本的航母動態 整理成csv檔 資料集長得像下面這樣
-   DATE Intel BZK battleshi1(&lt;3) battleshi1(&gt;3) carrier WZ7 R_Navy H6 Y-9 Russia Air Warning Taiwan Air Activity Taiwan 1LA Exerise month in 5 Eay inetel in 5 Eay Russiashi1 in 5 Eay battleshi1 in5EayH6Y9 is5datCARRIER     20230101    K K K     1 19 0 1 0 0 1 0 FALSE   20230102    K K K     1 0 0 1 0 0 2 0 TRUE   20230103           1 0 0 1 0 0 4 2 TRUE   20230104 T  T        1 3 0 1 0 0 1 0 FALSE   20230105           1 3 0 1 1 0 3 0 FALSE   20230106           1 3 0 1 1 0 3 0 FALSE    試著把各種不同的機種出現都列出來 看機器學習 能不能辦到預測航母的出現 應該用LSTM 來做會比較準確 但實驗性質 我們就把5年內出現與否當作一個參數 使用RrandomForest 或XGBoost 分類法就好 點我下載 資料集說明</p>
+        <p class="card-text"><!-- raw HTML omitted -->
+<h3 id="中共的航母每次出航海軍的弟兄又得要出去跟監壓力超大有沒有辦法預知他的出現呢">中共的航母每次出航，海軍的弟兄又得要出去跟監，壓力超大，有沒有辦法預知他的出現呢?</h3>
+<p>我們蒐集到日本防衛省統合幕僚監部 下載 2023-2024年經過日本的航母動態 整理成csv檔
+資料集長得像下面這樣</p></p>
         <a href="https://s0914712.github.io/blog/post-4/" class="btn btn-outline-primary">read more</a>
         </div>
     </article>
@@ -173,7 +175,7 @@
         <div class="card-body px-0">
         
         <a href="/categories/ai%e8%a7%a3%e6%b1%ba%e8%bb%8d%e4%ba%8b%e5%95%8f%e9%a1%8c"
-            class="text-primary">A i解決軍事問題</a>
+            class="text-primary">Ai解決軍事問題</a>
         
         <a href="https://s0914712.github.io/blog/post-1/" class="h5 d-block my-3">使用MLP分析臺海周邊海、空域動態</a>
         <div class="mb-3 post-meta">
@@ -183,9 +185,87 @@
             <span>29 October 2024</span>
             
         </div>
-        <p class="card-text">使用MLP分析臺海周邊海、空域動態 數據處理在現代資訊系統中至關重要。有效的數據處理能幫助組織從大量數據中提取出有價值的資訊，為後續的決策提供基礎。同時，良好的數據清理、轉換與整合過程能降低錯誤率，增加模型的可靠性。特別是在軍事、金融等高風險領域，數據處理的精確性直接影響任務成敗，以下就數據的清理流程與研究方法進行介紹。
-數據處理 國防部網站上有109年至113年每天的中共解放軍臺海周邊海、空域動態，雖然經過模糊化，但裡面每天出現的機種類型和區域已足夠進行分類和推理，經過資料的整理，統計出大約有20種機型，每天有不一樣的活動動態(如表一)，每一行代表一個時間點的軍事設備部署情況。對於每一行數據，程序創建一個圖，其中節點代表不同類型的軍事設備（如戰鬥機、轟炸機等），節點的值表示該設備的活動的區域代號。我們把它整理成CSV文件，藉由pandas的dataframe函式庫進行分析。
-   DATE J10 J11 J16 Y9EW Y8EW Y8ELINT Y8ASW Y8REC Y20 BZK WZ7 Z9 Y9CC SU30 H6 JH7 TB001 CH4 GJ2 KJ500     0601 2 0 0 0 0 0 0 0 0 0 3 0 0 2 0 0 0 0 0 0   0602 0 0 0 0 0 0 0 0 0 0 3 3 0 2 0 0 0 0 0 0    表一：整理後的資料集的一部分</p>
+        <p class="card-text"><!-- raw HTML omitted -->
+<h1 id="使用mlp分析臺海周邊海空域動態">使用MLP分析臺海周邊海、空域動態</h1>
+<p>數據處理在現代資訊系統中至關重要。有效的數據處理能幫助組織從大量數據中提取出有價值的資訊，為後續的決策提供基礎。同時，良好的數據清理、轉換與整合過程能降低錯誤率，增加模型的可靠性。特別是在軍事、金融等高風險領域，數據處理的精確性直接影響任務成敗，以下就數據的清理流程與研究方法進行介紹。</p>
+<h2 id="數據處理">數據處理</h2>
+<p>國防部網站上有109年至113年每天的中共解放軍臺海周邊海、空域動態，雖然經過模糊化，但裡面每天出現的機種類型和區域已足夠進行分類和推理，經過資料的整理，統計出大約有20種機型，每天有不一樣的活動動態(如表一)，每一行代表一個時間點的軍事設備部署情況。對於每一行數據，程序創建一個圖，其中節點代表不同類型的軍事設備（如戰鬥機、轟炸機等），節點的值表示該設備的活動的區域代號。我們把它整理成CSV文件，藉由pandas的dataframe函式庫進行分析。</p>
+<table>
+  <thead>
+      <tr>
+          <th>DATE</th>
+          <th>J10</th>
+          <th>J11</th>
+          <th>J16</th>
+          <th>Y9EW</th>
+          <th>Y8EW</th>
+          <th>Y8ELINT</th>
+          <th>Y8ASW</th>
+          <th>Y8REC</th>
+          <th>Y20</th>
+          <th>BZK</th>
+          <th>WZ7</th>
+          <th>Z9</th>
+          <th>Y9CC</th>
+          <th>SU30</th>
+          <th>H6</th>
+          <th>JH7</th>
+          <th>TB001</th>
+          <th>CH4</th>
+          <th>GJ2</th>
+          <th>KJ500</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0601</td>
+          <td>2</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>3</td>
+          <td>0</td>
+          <td>0</td>
+          <td>2</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>0602</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>3</td>
+          <td>3</td>
+          <td>0</td>
+          <td>2</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+  </tbody>
+</table>
+<p>表一：整理後的資料集的一部分</p></p>
         <a href="https://s0914712.github.io/blog/post-1/" class="btn btn-outline-primary">read more</a>
         </div>
     </article>
@@ -199,7 +279,7 @@
         <div class="card-body px-0">
         
         <a href="/categories/ai%e8%a7%a3%e6%b1%ba%e8%bb%8d%e4%ba%8b%e5%95%8f%e9%a1%8c"
-            class="text-primary">A i解決軍事問題</a>
+            class="text-primary">Ai解決軍事問題</a>
         
         <a href="https://s0914712.github.io/blog/post-3/" class="h5 d-block my-3">使用機器學習 預測軍事動態-西南空域篇</a>
         <div class="mb-3 post-meta">
@@ -209,7 +289,9 @@
             <span>29 October 2024</span>
             
         </div>
-        <p class="card-text">認識 Prophet Prophet 是一個由 Facebook Core Data Science Team 發表的開源代碼庫，用於時間序列預測，基於 Python 和 R 語言。相較於自行訓練時間序列預測模型，Prophet 的一些優點如下：‌</p>
+        <p class="card-text"><!-- raw HTML omitted -->
+<h3 id="認識-prophet">認識 Prophet</h3>
+<p>Prophet 是一個由 Facebook Core Data Science Team 發表的開源代碼庫，用於時間序列預測，基於 Python 和 R 語言。相較於自行訓練時間序列預測模型，Prophet 的一些優點如下：‌</p></p>
         <a href="https://s0914712.github.io/blog/post-3/" class="btn btn-outline-primary">read more</a>
         </div>
     </article>
@@ -233,7 +315,15 @@
             <span>29 October 2019</span>
             
         </div>
-        <p class="card-text">Heading 1 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Emphasis Emphasis, aka italics, with asterisks or underscores.</p>
+        <p class="card-text"><h1 id="heading-1">Heading 1</h1>
+<h2 id="heading-2">Heading 2</h2>
+<h3 id="heading-3">Heading 3</h3>
+<h4 id="heading-4">Heading 4</h4>
+<h5 id="heading-5">Heading 5</h5>
+<h6 id="heading-6">Heading 6</h6>
+<!-- raw HTML omitted -->
+<h5 id="emphasis">Emphasis</h5>
+<p>Emphasis, aka italics, with <em>asterisks</em> or <em>underscores</em>.</p></p>
         <a href="https://s0914712.github.io/blog/post-10/" class="btn btn-outline-primary">read more</a>
         </div>
     </article>
@@ -257,7 +347,15 @@
             <span>29 October 2019</span>
             
         </div>
-        <p class="card-text">Heading 1 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Emphasis Emphasis, aka italics, with asterisks or underscores.</p>
+        <p class="card-text"><h1 id="heading-1">Heading 1</h1>
+<h2 id="heading-2">Heading 2</h2>
+<h3 id="heading-3">Heading 3</h3>
+<h4 id="heading-4">Heading 4</h4>
+<h5 id="heading-5">Heading 5</h5>
+<h6 id="heading-6">Heading 6</h6>
+<!-- raw HTML omitted -->
+<h5 id="emphasis">Emphasis</h5>
+<p>Emphasis, aka italics, with <em>asterisks</em> or <em>underscores</em>.</p></p>
         <a href="https://s0914712.github.io/blog/post-11/" class="btn btn-outline-primary">read more</a>
         </div>
     </article>
@@ -281,7 +379,15 @@
             <span>29 October 2019</span>
             
         </div>
-        <p class="card-text">Heading 1 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Emphasis Emphasis, aka italics, with asterisks or underscores.</p>
+        <p class="card-text"><h1 id="heading-1">Heading 1</h1>
+<h2 id="heading-2">Heading 2</h2>
+<h3 id="heading-3">Heading 3</h3>
+<h4 id="heading-4">Heading 4</h4>
+<h5 id="heading-5">Heading 5</h5>
+<h6 id="heading-6">Heading 6</h6>
+<!-- raw HTML omitted -->
+<h5 id="emphasis">Emphasis</h5>
+<p>Emphasis, aka italics, with <em>asterisks</em> or <em>underscores</em>.</p></p>
         <a href="https://s0914712.github.io/blog/post-12/" class="btn btn-outline-primary">read more</a>
         </div>
     </article>
@@ -300,7 +406,7 @@
       <img src="https://s0914712.github.io/images/author.jpg" alt=""
         class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4">
       
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+      <p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,</p></p>
       <a href="https://s0914712.github.io/about/" class="btn btn-outline-primary">Know More</a>
       
     </div>
@@ -318,10 +424,10 @@
             href="/categories/go-language/">Go language</a>
         </li>
         <li><a
-            href="/categories/html/">Html</a>
+            href="/categories/html/">HTML</a>
         </li>
         <li><a
-            href="/categories/html-css/">Html css</a>
+            href="/categories/html-css/">HTML &amp; css</a>
         </li>
         <li><a
             href="/categories/programming-language/">Programming language</a>
@@ -342,7 +448,7 @@
         <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
             href="/tags/game/">Game</a></li>
         <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/html/">Html</a></li>
+            href="/tags/html/">HTML</a></li>
         <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
             href="/tags/military/">Military</a></li>
         <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
@@ -394,63 +500,29 @@
       
       <div class="col-12 mt-5">
         
-
-<ul class="pagination">
-    
-    <li class="page-item">
-        <a href="/blog/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item disabled">
-    <a  class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="/blog/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/blog/page/2/">2</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/blog/page/3/">3</a></li>
-    
-    
-    <li class="page-item">
-    <a href="/blog/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="/blog/page/3/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
-</ul>
-
-
+    <ul class="pagination pagination-default">
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item">
+        <a href="/blog/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item">
+        <a href="/blog/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
+      </li>
+      <li class="page-item">
+        <a href="/blog/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/blog/page/3/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul>
       </div>
     </div>
   </div>
@@ -513,10 +585,10 @@
               href="/categories/go-language/">Go language</a>
           </li>
           <li class="mb-3"><a class="text-dark"
-              href="/categories/html/">Html</a>
+              href="/categories/html/">HTML</a>
           </li>
           <li class="mb-3"><a class="text-dark"
-              href="/categories/html-css/">Html css</a>
+              href="/categories/html-css/">HTML &amp; css</a>
           </li>
           <li class="mb-3"><a class="text-dark"
               href="/categories/programming-language/">Programming language</a>

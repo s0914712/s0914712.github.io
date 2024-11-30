@@ -4,22 +4,16 @@
     <title>航母 on chen blog s091sdaf</title>
     <link>https://s0914712.github.io/tags/%E8%88%AA%E6%AF%8D/</link>
     <description>Recent content in 航母 on chen blog s091sdaf</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 29 Nov 2024 10:07:47 +0600</lastBuildDate>
-    
-	<atom:link href="https://s0914712.github.io/tags/%E8%88%AA%E6%AF%8D/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://s0914712.github.io/tags/%E8%88%AA%E6%AF%8D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用機器學習 預測軍事動態-航母篇</title>
       <link>https://s0914712.github.io/blog/post-4/</link>
       <pubDate>Fri, 29 Nov 2024 10:07:47 +0600</pubDate>
-      
       <guid>https://s0914712.github.io/blog/post-4/</guid>
-      <description>中共的航母每次出航，海軍的弟兄又得要出去跟監，壓力超大，有沒有辦法預知他的出現呢? 我們蒐集到日本防衛省統合幕僚監部 下載 2023-2024年經過日本的航母動態 整理成csv檔 資料集長得像下面這樣
-   DATE Intel BZK battleshi1(&amp;lt;3) battleshi1(&amp;gt;3) carrier WZ7 R_Navy H6 Y-9 Russia Air Warning Taiwan Air Activity Taiwan 1LA Exerise month in 5 Eay inetel in 5 Eay Russiashi1 in 5 Eay battleshi1 in5EayH6Y9 is5datCARRIER     20230101    K K K     1 19 0 1 0 0 1 0 FALSE   20230102    K K K     1 0 0 1 0 0 2 0 TRUE   20230103           1 0 0 1 0 0 4 2 TRUE   20230104 T  T        1 3 0 1 0 0 1 0 FALSE   20230105           1 3 0 1 1 0 3 0 FALSE   20230106           1 3 0 1 1 0 3 0 FALSE    試著把各種不同的機種出現都列出來 看機器學習 能不能辦到預測航母的出現 應該用LSTM 來做會比較準確 但實驗性質 我們就把5年內出現與否當作一個參數 使用RrandomForest 或XGBoost 分類法就好 點我下載 資料集說明</description>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h3 id=&#34;中共的航母每次出航海軍的弟兄又得要出去跟監壓力超大有沒有辦法預知他的出現呢&#34;&gt;中共的航母每次出航，海軍的弟兄又得要出去跟監，壓力超大，有沒有辦法預知他的出現呢?&lt;/h3&gt;&#xA;&lt;p&gt;我們蒐集到日本防衛省統合幕僚監部 下載 2023-2024年經過日本的航母動態 整理成csv檔&#xA;資料集長得像下面這樣&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

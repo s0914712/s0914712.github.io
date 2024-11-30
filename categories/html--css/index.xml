@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ai解決軍事問題 on chen blog s091sdaf</title>
-    <link>https://s0914712.github.io/tags/ai%E8%A7%A3%E6%B1%BA%E8%BB%8D%E4%BA%8B%E5%95%8F%E9%A1%8C/</link>
-    <description>Recent content in Ai解決軍事問題 on chen blog s091sdaf</description>
+    <title>HTML &amp; CSS on chen blog s091sdaf</title>
+    <link>https://s0914712.github.io/categories/html--css/</link>
+    <description>Recent content in HTML &amp; CSS on chen blog s091sdaf</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 29 Oct 2019 10:07:47 +0600</lastBuildDate>
-    <atom:link href="https://s0914712.github.io/tags/ai%E8%A7%A3%E6%B1%BA%E8%BB%8D%E4%BA%8B%E5%95%8F%E9%A1%8C/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://s0914712.github.io/categories/html--css/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用Prophet 預測週期方法</title>
       <link>https://s0914712.github.io/blog/post-2/</link>

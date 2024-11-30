@@ -11,7 +11,7 @@
   
   <meta name="theme-name" content="liva-hugo" />
   
-  <meta name="generator" content="Hugo 0.68.3" />
+  <meta name="generator" content="Hugo 0.139.3">
 
   <!-- plugins -->
   
@@ -140,7 +140,7 @@
       <div class="col-lg-8 mx-auto">
         
         <a href="/categories/ai%e8%a7%a3%e6%b1%ba%e8%bb%8d%e4%ba%8b%e5%95%8f%e9%a1%8c"
-          class="text-primary">A i解決軍事問題</a>
+          class="text-primary">Ai解決軍事問題</a>
         
         <h2>使用機器學習 預測軍事動態-西南空域篇</h2>
         <div class="mb-3 post-meta">
@@ -161,25 +161,25 @@
 提供讓分析師、領域專家能根據經驗法則設定的參數：例如歷史週期、特殊節日的日期等，不會因為寫成制式套件就失去自己手刻的好處。</p>
 <p>安裝步驟
 (0) 首先建議要用 conda 創建虛擬環境，避免不同套件版本產生不必要的衝突</p>
-<pre><code>(base) $ conda create -n env_name python=3.7
+<pre tabindex="0"><code>(base) $ conda create -n env_name python=3.7
 (base) $ conda activate env_name
 (env_name) $
 </code></pre><p>Windows
 而 Windows 的預設編譯器是 MSVC ，pystan 並不支援，因此需要額外安裝 Windows 版本的 gcc：mingw-w64 compiler</p>
-<pre><code>(env_name) $ conda install libpython m2w64-toolchain -c msys2
+<pre tabindex="0"><code>(env_name) $ conda install libpython m2w64-toolchain -c msys2
 </code></pre><p>確認都有安裝好支援的 c++ compiler 後，記得先安裝 pystan 。以下都建議使用 conda install，不要用 pip install，虛擬環境下的 jupyter notebook 可能會 import 不到。</p>
-<pre><code>(env_name) $ conda install -c pystan conda-forge
+<pre tabindex="0"><code>(env_name) $ conda install -c pystan conda-forge
 </code></pre><p>接著安裝 prophet （注意：v1.0 後的版本套件名稱為 prophet，不再是 fbprophet，網路上很多教學文章還以舊稱，記得在 import 時調整即可</p>
-<pre><code>(env_name) $ conda install -c prophet conda-forge
+<pre tabindex="0"><code>(env_name) $ conda install -c prophet conda-forge
 </code></pre><p>###完成好以後就可以載入資料集進行分析</p>
 <p>像部隊活動這種多半具有週期性，我們可以結合上述的資料集每天的活動數量與戰備警巡的日期進行進一步的分析，戰備警巡為中共東部戰區位臺灣周邊海空域進行之例行性海空兵力聯合巡邏活動，在戰備警巡實施期間，我們可以由發布的新聞稿中觀察到中共軍機和船艦的活動大幅增加，機型種類也更加完整，中共發言人在例行記者會解釋： 「戰備警巡主要目的在進一步提升部隊實戰化訓練水平，增強捍衛國家主權和領土完整的打仗能力，共軍將持續練兵備戰，繼續常態組織有關軍事行動」</p>
 <p>，而戰備警巡發生的時間往往都在晚上或是清晨，雖然只在我24浬處進行，但軍事行動已具備「猝然攻擊」的戰術戰法，使我國軍最前線海空人員疲於奔命，藉由統計戰備警巡新聞報導的資料，可以大致推估戰備警巡週期大月在6-14天不等，但這僅是藉由統計資料直觀判斷的結果，如果加上深度學習工具，我們更能做到「預測」，「Prophet」程式庫，進行時間序列預測</p>
-<pre><code># 將 day.csv 匯入資料框
+<pre tabindex="0"><code># 將 day.csv 匯入資料框
 # 由 parse_dates 指定代表日期的行
-df = pd.read_csv('day.csv', parse_dates=[1])
-df2 = pd.read_csv('/content/dateAndcharacter.csv',parse_dates=[1])
+df = pd.read_csv(&#39;day.csv&#39;, parse_dates=[1])
+df2 = pd.read_csv(&#39;/content/dateAndcharacter.csv&#39;,parse_dates=[1])
 DF_PLANE = pd.DataFrame(df2)
-DF_PLANE['DATE'] = pd.to_datetime(DF_PLANE['DATE'], format='%Y%m%d')
+DF_PLANE[&#39;DATE&#39;] = pd.to_datetime(DF_PLANE[&#39;DATE&#39;], format=&#39;%Y%m%d&#39;)
 DF_PLANE
 </code></pre><p><img src="../../images/post/prophet1.png" alt="image"></p>
 <p>以上的資料集為2023年國防部軍事動態網站上擷取出來的公開資料  我把它彙整成csv檔案
@@ -187,26 +187,26 @@ DF_PLANE
 <a href="https://drive.google.com/file/d/1xSIIJ6og7lxBIbWU8sXiUwC9FABxA9N-/view?usp=sharing" title="Google's Homepage">2023年國防部軍事動態網站軍事動態彙整</a></p>
 <h3 id="接下來就開始-開工寫程式">接下來就開始 開工寫程式</h3>
 <h4 id="載入資料集">載入資料集</h4>
-<pre><code>df2 = df.copy()
+<pre tabindex="0"><code>df2 = df.copy()
 DF_PLANE2=DF_PLANE.copy()
-DF_PLANE2=DF_PLANE2[['DATE', 'KJ-500']]
+DF_PLANE2=DF_PLANE2[[&#39;DATE&#39;, &#39;KJ-500&#39;]]
 #把想要評估的對象設定為y  這邊以KJ-500
-DF_PLANE2.columns = ['ds', 'y']
-</code></pre><pre><code># 設定分割日 mday
-mday = pd.to_datetime('2023-10-1')
+DF_PLANE2.columns = [&#39;ds&#39;, &#39;y&#39;]
+</code></pre><pre tabindex="0"><code># 設定分割日 mday
+mday = pd.to_datetime(&#39;2023-10-1&#39;)
 
 # 建立訓練用 index 與驗證用 index
-train_index = DF_PLANE2['ds'] &lt; mday
-test_index = DF_PLANE2['ds'] &gt;= mday
+train_index = DF_PLANE2[&#39;ds&#39;] &lt; mday
+test_index = DF_PLANE2[&#39;ds&#39;] &gt;= mday
 
 # 分割輸入資料
 x_train = DF_PLANE2[train_index]
 x_test = DF_PLANE2[test_index]
 
 # 分割日期資料（用於繪製圖形）
-dates_test = DF_PLANE2['ds'][test_index]
+dates_test = DF_PLANE2[&#39;ds&#39;][test_index]
 </code></pre><h4 id="選擇prophet演算法">選擇prophet演算法</h4>
-<pre><code>from prophet import Prophet
+<pre tabindex="0"><code>from prophet import Prophet
 
 #  選擇模型
 # 這 3 個 seasonality 參數的設定很重要
@@ -217,12 +217,12 @@ dates_test = DF_PLANE2['ds'][test_index]
 
 m1 = Prophet(yearly_seasonality=True, weekly_seasonality=True,
     daily_seasonality=True,interval_width=0.9,
-    seasonality_mode='multiplicative')
+    seasonality_mode=&#39;multiplicative&#39;)
 </code></pre><h4 id="訓練與預測">訓練與預測</h4>
-<pre><code>m1.fit(x_train)
-future1 = m1.make_future_dataframe(periods=61, freq='D')
+<pre tabindex="0"><code>m1.fit(x_train)
+future1 = m1.make_future_dataframe(periods=61, freq=&#39;D&#39;)
 </code></pre><h4 id="確認結果">確認結果</h4>
-<pre><code>display(future1.head())
+<pre tabindex="0"><code>display(future1.head())
 display(future1.tail())
 fcst1 = m1.predict(future1)
 fig = m1.plot_components(fcst1)
@@ -230,23 +230,23 @@ plt.show()
 </code></pre><h4 id="繪製圖形">繪製圖形</h4>
 <p><img src="../../images/post/prophet1.png" alt="image"></p>
 <h4 id="計算與實際的差異值r2">計算與實際的差異值(R2)</h4>
-<pre><code># 只從 fcst2 中提取預測部分
-ypred2 = fcst2[-88:][['yhat']].values
+<pre tabindex="0"><code># 只從 fcst2 中提取預測部分
+ypred2 = fcst2[-88:][[&#39;yhat&#39;]].values
 # 計算 R2 值
 score2 = r2_score(ytest1, ypred2)
 
 #### 確認結果
 
-r2_text2 = f'R2 score:{score2:.4f}'
+r2_text2 = f&#39;R2 score:{score2:.4f}&#39;
 print(r2_text2)
 </code></pre><h4 id="繪製時間序列圖">繪製時間序列圖</h4>
-<pre><code>import matplotlib.dates as mdates
+<pre tabindex="0"><code>import matplotlib.dates as mdates
 fig, ax = plt.subplots(figsize=(8, 4))
 
 #### 繪製圖形
-ax.plot(dates_test, ytest1, label='標準答案', c='k')
-ax.plot(dates_test, ypred1, label='預測結果 v1', c='c')
-ax.plot(dates_test, ypred2, label='預測結果 v2', c='b')
+ax.plot(dates_test, ytest1, label=&#39;標準答案&#39;, c=&#39;k&#39;)
+ax.plot(dates_test, ypred1, label=&#39;預測結果 v1&#39;, c=&#39;c&#39;)
+ax.plot(dates_test, ypred2, label=&#39;預測結果 v2&#39;, c=&#39;b&#39;)
 
 # 日期刻度間隔
 # 於每週四顯示日期
@@ -254,19 +254,17 @@ weeks = mdates.WeekdayLocator(byweekday=mdates.TH)
 ax.xaxis.set_major_locator(weeks)
 
 #### 將日期刻度標籤文字旋轉 90 度
-ax.tick_params(axis='x', rotation=90)
+ax.tick_params(axis=&#39;x&#39;, rotation=90)
 
 #### 開始日與結束日
-sday = pd.to_datetime('2023-10-1')
-eday = pd.to_datetime('2023-12-31')
+sday = pd.to_datetime(&#39;2023-10-1&#39;)
+eday = pd.to_datetime(&#39;2023-12-31&#39;)
 ax.set_xlim(sday, eday)
 
 #### 顯示網格等
 ax.grid()
 ax.legend()
-ax.set_title('KJ-500 出現機率預測結果  ' + r2_text2)
-
-
+ax.set_title(&#39;KJ-500 出現機率預測結果  &#39; + r2_text2)
 </code></pre><h4 id="輸出畫面">輸出畫面</h4>
 <p><img src="../../images/post/prophet3.png" alt="image"></p>
 <h4 id="結論">結論</h4>
@@ -279,8 +277,8 @@ ax.set_title('KJ-500 出現機率預測結果  ' + r2_text2)
 
         
         <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
+<script>
+    window.disqus_config = function () {
     
     
     
@@ -359,10 +357,10 @@ ax.set_title('KJ-500 出現機率預測結果  ' + r2_text2)
               href="/categories/go-language/">Go language</a>
           </li>
           <li class="mb-3"><a class="text-dark"
-              href="/categories/html/">Html</a>
+              href="/categories/html/">HTML</a>
           </li>
           <li class="mb-3"><a class="text-dark"
-              href="/categories/html-css/">Html css</a>
+              href="/categories/html-css/">HTML &amp; css</a>
           </li>
           <li class="mb-3"><a class="text-dark"
               href="/categories/programming-language/">Programming language</a>
