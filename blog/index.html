@@ -6,7 +6,7 @@
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="this is meta description">
-  <meta name="author" content="Themefisher">
+  <meta name="author" content="Jeremy Chen">
     
   
   <meta name="theme-name" content="liva-hugo" />
@@ -62,7 +62,7 @@
     
     <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
       <a class="navbar-brand mobile-view" href="https://s0914712.github.io/"><img class="img-fluid"
-          src="https://s0914712.github.io/images/logo.png" alt="chen blog s091sdaf"></a>
+          src="https://s0914712.github.io/images/logo.jpg" alt="chen blog s091sdaf"></a>
       <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
         <i class="ti-menu"></i>
       </button>
@@ -95,7 +95,7 @@
         </div>
 
         <a class="navbar-brand mx-auto desktop-view" href="https://s0914712.github.io/"><img class="img-fluid"
-            src="https://s0914712.github.io/images/logo.png" alt="chen blog s091sdaf"></a>
+            src="https://s0914712.github.io/images/logo.jpg" alt="chen blog s091sdaf"></a>
 
         <ul class="navbar-nav">
           
@@ -150,23 +150,72 @@
           <div class="col-md-6 mb-4">
     <article class="card">
         
-        <img src="https://s0914712.github.io/images/featured-post/post-1.jpg" class="card-img-top" alt="what do you want">
+        <img src="https://s0914712.github.io/images/post/post-2.jpg" class="card-img-top" alt="使用機器學習 預測軍事動態-航母篇">
         
         <div class="card-body px-0">
         
-        <a href="/categories/what-do-you-want"
-            class="text-primary">What do you want</a>
+        <a href="/categories/ai%e8%a7%a3%e6%b1%ba%e8%bb%8d%e4%ba%8b%e5%95%8f%e9%a1%8c"
+            class="text-primary">A i解決軍事問題</a>
         
-        <a href="https://s0914712.github.io/blog/post-1/" class="h5 d-block my-3">what do you want</a>
+        <a href="https://s0914712.github.io/blog/post-4/" class="h5 d-block my-3">使用機器學習 預測軍事動態-航母篇</a>
         <div class="mb-3 post-meta">
-            <span>By Themefisher</span>
+            <span>By Jeremy Chen</span>
+            
+            <span class="border-bottom border-primary px-2 mx-1"></span>
+            <span>29 November 2024</span>
+            
+        </div>
+        <p class="card-text">中共的航母每次出航，海軍的弟兄又得要出去跟監，壓力超大，有沒有辦法預知他的出現呢? 我們蒐集到日本防衛省統合幕僚監部 下載 2023-2024年經過日本的航母動態 整理成csv檔 資料集長得像下面這樣
+   DATE Intel BZK battleshi1(&lt;3) battleshi1(&gt;3) carrier WZ7 R_Navy H6 Y-9 Russia Air Warning Taiwan Air Activity Taiwan 1LA Exerise month in 5 Eay inetel in 5 Eay Russiashi1 in 5 Eay battleshi1 in5EayH6Y9 is5datCARRIER     20230101    K K K     1 19 0 1 0 0 1 0 FALSE   20230102    K K K     1 0 0 1 0 0 2 0 TRUE   20230103           1 0 0 1 0 0 4 2 TRUE   20230104 T  T        1 3 0 1 0 0 1 0 FALSE   20230105           1 3 0 1 1 0 3 0 FALSE   20230106           1 3 0 1 1 0 3 0 FALSE    試著把各種不同的機種出現都列出來 看機器學習 能不能辦到預測航母的出現 應該用LSTM 來做會比較準確 但實驗性質 我們就把5年內出現與否當作一個參數 使用RrandomForest 或XGBoost 分類法就好 點我下載 資料集說明</p>
+        <a href="https://s0914712.github.io/blog/post-4/" class="btn btn-outline-primary">read more</a>
+        </div>
+    </article>
+</div>
+          
+          <div class="col-md-6 mb-4">
+    <article class="card">
+        
+        <div class="card-body px-0">
+        
+        <a href="/categories/ai%e8%a7%a3%e6%b1%ba%e8%bb%8d%e4%ba%8b%e5%95%8f%e9%a1%8c"
+            class="text-primary">A i解決軍事問題</a>
+        
+        <a href="https://s0914712.github.io/blog/post-1/" class="h5 d-block my-3">使用MLP分析臺海周邊海、空域動態</a>
+        <div class="mb-3 post-meta">
+            <span>By Jeremy Chen</span>
             
             <span class="border-bottom border-primary px-2 mx-1"></span>
             <span>29 October 2024</span>
             
         </div>
-        <p class="card-text">Heading 1 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Emphasis Emphasis, aka italics, with asterisks or underscores.</p>
+        <p class="card-text">使用MLP分析臺海周邊海、空域動態 數據處理在現代資訊系統中至關重要。有效的數據處理能幫助組織從大量數據中提取出有價值的資訊，為後續的決策提供基礎。同時，良好的數據清理、轉換與整合過程能降低錯誤率，增加模型的可靠性。特別是在軍事、金融等高風險領域，數據處理的精確性直接影響任務成敗，以下就數據的清理流程與研究方法進行介紹。
+數據處理 國防部網站上有109年至113年每天的中共解放軍臺海周邊海、空域動態，雖然經過模糊化，但裡面每天出現的機種類型和區域已足夠進行分類和推理，經過資料的整理，統計出大約有20種機型，每天有不一樣的活動動態(如表一)，每一行代表一個時間點的軍事設備部署情況。對於每一行數據，程序創建一個圖，其中節點代表不同類型的軍事設備（如戰鬥機、轟炸機等），節點的值表示該設備的活動的區域代號。我們把它整理成CSV文件，藉由pandas的dataframe函式庫進行分析。
+   DATE J10 J11 J16 Y9EW Y8EW Y8ELINT Y8ASW Y8REC Y20 BZK WZ7 Z9 Y9CC SU30 H6 JH7 TB001 CH4 GJ2 KJ500     0601 2 0 0 0 0 0 0 0 0 0 3 0 0 2 0 0 0 0 0 0   0602 0 0 0 0 0 0 0 0 0 0 3 3 0 2 0 0 0 0 0 0    表一：整理後的資料集的一部分</p>
         <a href="https://s0914712.github.io/blog/post-1/" class="btn btn-outline-primary">read more</a>
+        </div>
+    </article>
+</div>
+          
+          <div class="col-md-6 mb-4">
+    <article class="card">
+        
+        <img src="https://s0914712.github.io/images/featured-post/post-3.jpg" class="card-img-top" alt="使用機器學習 預測軍事動態-西南空域篇">
+        
+        <div class="card-body px-0">
+        
+        <a href="/categories/ai%e8%a7%a3%e6%b1%ba%e8%bb%8d%e4%ba%8b%e5%95%8f%e9%a1%8c"
+            class="text-primary">A i解決軍事問題</a>
+        
+        <a href="https://s0914712.github.io/blog/post-3/" class="h5 d-block my-3">使用機器學習 預測軍事動態-西南空域篇</a>
+        <div class="mb-3 post-meta">
+            <span>By Jeremy Chen</span>
+            
+            <span class="border-bottom border-primary px-2 mx-1"></span>
+            <span>29 October 2024</span>
+            
+        </div>
+        <p class="card-text">認識 Prophet Prophet 是一個由 Facebook Core Data Science Team 發表的開源代碼庫，用於時間序列預測，基於 Python 和 R 語言。相較於自行訓練時間序列預測模型，Prophet 的一些優點如下：‌</p>
+        <a href="https://s0914712.github.io/blog/post-3/" class="btn btn-outline-primary">read more</a>
         </div>
     </article>
 </div>
@@ -183,7 +232,7 @@
         
         <a href="https://s0914712.github.io/blog/post-10/" class="h5 d-block my-3">How To Use Checklists To Improve Your UX</a>
         <div class="mb-3 post-meta">
-            <span>By Themefisher</span>
+            <span>By Jeremy Chen</span>
             
             <span class="border-bottom border-primary px-2 mx-1"></span>
             <span>29 October 2019</span>
@@ -207,7 +256,7 @@
         
         <a href="https://s0914712.github.io/blog/post-11/" class="h5 d-block my-3">How To Use Checklists To Improve Your UX</a>
         <div class="mb-3 post-meta">
-            <span>By Themefisher</span>
+            <span>By Jeremy Chen</span>
             
             <span class="border-bottom border-primary px-2 mx-1"></span>
             <span>29 October 2019</span>
@@ -231,7 +280,7 @@
         
         <a href="https://s0914712.github.io/blog/post-12/" class="h5 d-block my-3">How To Use Checklists To Improve Your UX</a>
         <div class="mb-3 post-meta">
-            <span>By Themefisher</span>
+            <span>By Jeremy Chen</span>
             
             <span class="border-bottom border-primary px-2 mx-1"></span>
             <span>29 October 2019</span>
@@ -239,54 +288,6 @@
         </div>
         <p class="card-text">Heading 1 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Emphasis Emphasis, aka italics, with asterisks or underscores.</p>
         <a href="https://s0914712.github.io/blog/post-12/" class="btn btn-outline-primary">read more</a>
-        </div>
-    </article>
-</div>
-          
-          <div class="col-md-6 mb-4">
-    <article class="card">
-        
-        <img src="https://s0914712.github.io/images/post/post-3.jpg" class="card-img-top" alt="How To Use Checklists To Improve Your UX">
-        
-        <div class="card-body px-0">
-        
-        <a href="/categories/go-language"
-            class="text-primary">Go language</a>
-        
-        <a href="https://s0914712.github.io/blog/post-13/" class="h5 d-block my-3">How To Use Checklists To Improve Your UX</a>
-        <div class="mb-3 post-meta">
-            <span>By Themefisher</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            <span>29 October 2019</span>
-            
-        </div>
-        <p class="card-text">Heading 1 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Emphasis Emphasis, aka italics, with asterisks or underscores.</p>
-        <a href="https://s0914712.github.io/blog/post-13/" class="btn btn-outline-primary">read more</a>
-        </div>
-    </article>
-</div>
-          
-          <div class="col-md-6 mb-4">
-    <article class="card">
-        
-        <img src="https://s0914712.github.io/images/featured-post/post-2.jpg" class="card-img-top" alt="How To Use Checklists To Improve Your UX">
-        
-        <div class="card-body px-0">
-        
-        <a href="/categories/html-css"
-            class="text-primary">H t m l &amp; c s s</a>
-        
-        <a href="https://s0914712.github.io/blog/post-2/" class="h5 d-block my-3">How To Use Checklists To Improve Your UX</a>
-        <div class="mb-3 post-meta">
-            <span>By Themefisher</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            <span>29 October 2019</span>
-            
-        </div>
-        <p class="card-text">Heading 1 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Emphasis Emphasis, aka italics, with asterisks or underscores.</p>
-        <a href="https://s0914712.github.io/blog/post-2/" class="btn btn-outline-primary">read more</a>
         </div>
     </article>
 </div>
@@ -313,6 +314,9 @@
       <h4 class="widget-title">Category</h4>
       <ul class="list-unstyled">
         <li><a
+            href="/categories/ai%e8%a7%a3%e6%b1%ba%e8%bb%8d%e4%ba%8b%e5%95%8f%e9%a1%8c/">Ai解決軍事問題</a>
+        </li>
+        <li><a
             href="/categories/android-and-gaming/">Android and gaming</a>
         </li>
         <li><a
@@ -330,12 +334,6 @@
         <li><a
             href="/categories/python/">Python</a>
         </li>
-        <li><a
-            href="/categories/web-design/">Web design</a>
-        </li>
-        <li><a
-            href="/categories/what-do-you-want/">What do you want</a>
-        </li>
       </ul>
     </div>
     
@@ -343,17 +341,33 @@
       <h4 class="widget-title">Tag</h4>
       <ul class="list-inline">
         <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/ai/">Ai</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/ai%e8%a7%a3%e6%b1%ba%e8%bb%8d%e4%ba%8b%e5%95%8f%e9%a1%8c/">Ai解決軍事問題</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
             href="/tags/game/">Game</a></li>
         <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
             href="/tags/html/">Html</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/military/">Military</a></li>
         <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
             href="/tags/new/">New</a></li>
         <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
             href="/tags/photos/">Photos</a></li>
         <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/pla/">Pla</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
             href="/tags/python/">Python</a></li>
         <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
             href="/tags/react/">React</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/%e6%b7%b1%e5%ba%a6%e5%ad%b8%e7%bf%92/">深度學習</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/%e8%88%aa%e6%af%8d/">航母</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b/">軍事動態</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/%e8%bb%8d%e6%bc%94/">軍演</a></li>
       </ul>
     </div>
     
@@ -454,7 +468,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 text-center mb-5">
-        <a href="https://s0914712.github.io/"><img src="https://s0914712.github.io/images/logo.png" alt="chen blog s091sdaf"></a>
+        <a href="https://s0914712.github.io/"><img src="https://s0914712.github.io/images/logo.jpg" alt="chen blog s091sdaf"></a>
       </div>
                
       <div class="col-lg-3 col-sm-6 mb-5">
@@ -495,6 +509,9 @@
         <h6 class="mb-4">Categories</h6>
         <ul class="list-unstyled">
           <li class="mb-3"><a class="text-dark"
+              href="/categories/ai%e8%a7%a3%e6%b1%ba%e8%bb%8d%e4%ba%8b%e5%95%8f%e9%a1%8c/">Ai解決軍事問題</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
               href="/categories/android-and-gaming/">Android and gaming</a>
           </li>
           <li class="mb-3"><a class="text-dark"
@@ -512,12 +529,6 @@
           <li class="mb-3"><a class="text-dark"
               href="/categories/python/">Python</a>
           </li>
-          <li class="mb-3"><a class="text-dark"
-              href="/categories/web-design/">Web design</a>
-          </li>
-          <li class="mb-3"><a class="text-dark"
-              href="/categories/what-do-you-want/">What do you want</a>
-          </li>
         </ul>
       </div>
       <div class="col-lg-3 col-sm-6 mb-5">
@@ -533,7 +544,7 @@
         </ul>
       </div>
       <div class="col-12 border-top py-4 text-center">
-        | copyright © 2021 <a href="https://themefisher.com/hugo-themes/">Themefisher</a> All Rights Reserved |
+        | copyright © 2021 <a href="https://themefisher.com/hugo-themes/">Chen</a> All Rights Reserved |
       </div>
     </div>
   </div>
