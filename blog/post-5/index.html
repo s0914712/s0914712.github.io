@@ -184,7 +184,7 @@
             };
 
             try {
-                const response = await fetch('/revolution', {
+                const response = await fetch('https://fdf-1087471739366.us-central1.run.app/revolution', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -208,7 +208,7 @@
         document.getElementById('simulateBtn').addEventListener('click', async () => {
             const country = document.getElementById('sanctionCountrySelect').value;
             try {
-                const response = await fetch(`/plot?start_country=${country}`);
+                const response = await fetch(`https://fdf-1087471739366.us-central1.run.app/plot?start_country=${country}`);
                 const message = await response.text();
                 showMessage(message);
             } catch (err) {
@@ -219,7 +219,7 @@
         // 產生圖像按鈕
         document.getElementById('generatePlotsBtn').addEventListener('click', async () => {
             try {
-                const response = await fetch('/plot', {
+                const response = await fetch('https://fdf-1087471739366.us-central1.run.app/plot', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
