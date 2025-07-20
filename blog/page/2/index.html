@@ -145,6 +145,136 @@
           <div class="col-md-6 mb-4">
     <article class="card">
         
+        <img src="https://s0914712.github.io/images/featured-post/post-3.jpg" class="card-img-top" alt="使用MLP分析臺海周邊海、空域動態">
+        
+        <div class="card-body px-0">
+        
+        <a href="/categories/ai%e8%a7%a3%e6%b1%ba%e8%bb%8d%e4%ba%8b%e5%95%8f%e9%a1%8c"
+            class="text-primary">Ai解決軍事問題</a>
+        
+        <a href="https://s0914712.github.io/blog/post-1/" class="h5 d-block my-3">使用MLP分析臺海周邊海、空域動態</a>
+        <div class="mb-3 post-meta">
+            <span>By Jeremy Chen</span>
+            
+            <span class="border-bottom border-primary px-2 mx-1"></span>
+            <span>29 October 2024</span>
+            
+        </div>
+        <p class="card-text"><!-- raw HTML omitted -->
+<h3 id="使用mlp分析臺海周邊海空域動態">使用MLP分析臺海周邊海、空域動態</h3>
+<p>數據處理在現代資訊系統中至關重要。有效的數據處理能幫助組織從大量數據中提取出有價值的資訊，為後續的決策提供基礎。同時，良好的數據清理、轉換與整合過程能降低錯誤率，增加模型的可靠性。特別是在軍事、金融等高風險領域，數據處理的精確性直接影響任務成敗，以下就數據的清理流程與研究方法進行介紹。</p>
+<h3 id="數據處理">數據處理</h3>
+<p>國防部網站上有109年至113年每天的中共解放軍臺海周邊海、空域動態，雖然經過模糊化，但裡面每天出現的機種類型和區域已足夠進行分類和推理，經過資料的整理，統計出大約有20種機型，每天有不一樣的活動動態(如表一)，每一行代表一個時間點的軍事設備部署情況。對於每一行數據，程序創建一個圖，其中節點代表不同類型的軍事設備（如戰鬥機、轟炸機等），節點的值表示該設備的活動的區域代號。我們把它整理成CSV文件，藉由pandas的dataframe函式庫進行分析。</p>
+<table>
+  <thead>
+      <tr>
+          <th>DATE</th>
+          <th>J10</th>
+          <th>J11</th>
+          <th>J16</th>
+          <th>Y9EW</th>
+          <th>Y8EW</th>
+          <th>Y8ELINT</th>
+          <th>Y8ASW</th>
+          <th>Y8REC</th>
+          <th>Y20</th>
+          <th>BZK</th>
+          <th>WZ7</th>
+          <th>Z9</th>
+          <th>Y9CC</th>
+          <th>SU30</th>
+          <th>H6</th>
+          <th>JH7</th>
+          <th>TB001</th>
+          <th>CH4</th>
+          <th>GJ2</th>
+          <th>KJ500</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0601</td>
+          <td>2</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>3</td>
+          <td>0</td>
+          <td>0</td>
+          <td>2</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>0602</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>3</td>
+          <td>3</td>
+          <td>0</td>
+          <td>2</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+  </tbody>
+</table>
+<p>表一：整理後的資料集的一部分</p></p>
+        <a href="https://s0914712.github.io/blog/post-1/" class="btn btn-outline-primary">read more</a>
+        </div>
+    </article>
+</div>
+          
+          <div class="col-md-6 mb-4">
+    <article class="card">
+        
+        <img src="https://s0914712.github.io/images/featured-post/post-3.jpg" class="card-img-top" alt="使用機器學習 預測軍事動態-西南空域篇">
+        
+        <div class="card-body px-0">
+        
+        <a href="/categories/ai%e8%a7%a3%e6%b1%ba%e8%bb%8d%e4%ba%8b%e5%95%8f%e9%a1%8c"
+            class="text-primary">Ai解決軍事問題</a>
+        
+        <a href="https://s0914712.github.io/blog/post-3/" class="h5 d-block my-3">使用機器學習 預測軍事動態-西南空域篇</a>
+        <div class="mb-3 post-meta">
+            <span>By Jeremy Chen</span>
+            
+            <span class="border-bottom border-primary px-2 mx-1"></span>
+            <span>29 October 2024</span>
+            
+        </div>
+        <p class="card-text"><!-- raw HTML omitted -->
+<h3 id="認識-prophet">認識 Prophet</h3>
+<p>Prophet 是一個由 Facebook Core Data Science Team 發表的開源代碼庫，用於時間序列預測，基於 Python 和 R 語言。相較於自行訓練時間序列預測模型，Prophet 的一些優點如下：‌</p></p>
+        <a href="https://s0914712.github.io/blog/post-3/" class="btn btn-outline-primary">read more</a>
+        </div>
+    </article>
+</div>
+          
+          <div class="col-md-6 mb-4">
+    <article class="card">
+        
         <img src="https://s0914712.github.io/images/featured-post/post-2.jpg" class="card-img-top" alt="使用Prophet 預測週期方法">
         
         <div class="card-body px-0">
