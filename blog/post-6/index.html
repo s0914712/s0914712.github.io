@@ -1,429 +1,341 @@
 <!DOCTYPE html>
-<html lang="en-us"><head>
-  <meta charset="utf-8">
-  <title>chen blog s091sdaf</title>
-
-  <!-- mobile responsive meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="this is meta description">
-  <meta name="author" content="Jeremy Chen">
-    
-  
-  <meta name="theme-name" content="liva-hugo" />
-  
-  <meta name="generator" content="Hugo 0.139.3">
-
-  <!-- plugins -->
-  
-  <link rel="stylesheet" href="https://s0914712.github.io/plugins/bootstrap/bootstrap.min.css ">
-  
-  <link rel="stylesheet" href="https://s0914712.github.io/plugins/slick/slick.css ">
-  
-  <link rel="stylesheet" href="https://s0914712.github.io/plugins/themify-icons/themify-icons.css ">
-  
-  <link rel="stylesheet" href="https://s0914712.github.io/plugins/venobox/venobox.css ">
-  
-
-  <!-- Main Stylesheet -->
-  
-  <link rel="stylesheet" href="https://s0914712.github.io/scss/style.min.css" media="screen">
-
-  <!--Favicon-->
-  <link rel="shortcut icon" href="https://s0914712.github.io/images/favicon.png " type="image/x-icon">
-  <link rel="icon" href="https://s0914712.github.io/images/favicon.png " type="image/x-icon">
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XFZRBQ7BCN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XFZRBQ7BCN');
-</script>
-
-
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diplomatic Network Designer</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .explanation-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .explanation-link:hover {
+            text-decoration: underline;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+        }
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #666;
+        }
+        select, input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        input[type="number"] {
+            width: 100%;
+        }
+        button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        button:hover {
+            background-color: #1d4ed8;
+        }
+        .controls-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .message {
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        .success {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid #6ee7b7;
+        }
+        .error {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+        #imagesContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        #imagesContainer img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .relation-group {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-end;
+            margin-bottom: 1rem;
+        }
+        .relation-group input,
+        .relation-group select {
+            flex: 1;
+        }
+        .relation-group button {
+            flex: 0 0 auto;
+        }
+    </style>
 </head>
 <body>
-<!-- preloader start -->
-<div class="preloader">
-  
-</div>
-<!-- preloader end -->
-<!-- navigation -->
-<header class="navigation">
-  <div class="container">
-    
-    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
-      <a class="navbar-brand mobile-view" href="https://s0914712.github.io/"><img class="img-fluid"
-          src="https://s0914712.github.io/images/logo.jpg" alt="chen blog s091sdaf"></a>
-      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
-        <i class="ti-menu"></i>
-      </button>
+    <h1>Diplomatic Network Designer</h1>
+    <!-- Explanation 超連結 -->
+    <a href="https://medium.com/@s0914712/multidimensional-network-propagation-model-based-on-constructivist-theory-c92450fa2a77" 
+       target="_blank" 
+       class="explanation-link">
+        Explanation of the Model
+    </a>
 
-      <div class="collapse navbar-collapse text-center" id="navigation">
-        <div class="desktop-view">
-          <ul class="navbar-nav mr-auto">
-            
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="ti-facebook"></i></a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="ti-twitter-alt"></i></a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="ti-instagram"></i></a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="ti-github"></i></a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="ti-linkedin"></i></a>
-            </li>
-            
-          </ul>
+    <!-- 設計外交網絡的表單 -->
+    <div class="card">
+        <h2 class="card-title">Design Diplomatic Network</h2>
+        <div id="relationsContainer">
+            <!-- 動態生成的關係輸入欄位會放在這裡 -->
         </div>
+        <button id="addRelationBtn">Add Relation</button>
+        <button id="generateNetworkBtn">Generate Network</button>
+    </div>
 
-        <a class="navbar-brand mx-auto desktop-view" href="https://s0914712.github.io/"><img class="img-fluid"
-            src="https://s0914712.github.io/images/logo.jpg" alt="chen blog s091sdaf"></a>
-
-        <ul class="navbar-nav">
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="https://s0914712.github.io/about/">About</a>
-          </li>
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="https://s0914712.github.io/blog/">Post</a>
-          </li>
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="https://s0914712.github.io/contact/">Contact</a>
-          </li>
-          
-          
-        </ul>
-
-        
-        <!-- search -->
-        <div class="search pl-lg-4">
-          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
-          <div class="search-wrapper">
-            <form action="https://s0914712.github.io//search" class="h-100">
-              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
-            </form>
-            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
-          </div>
+    <!-- Propaganda 和 Sanction 設置 -->
+    <div class="card">
+        <h2 class="card-title">Propaganda and Sanction Settings</h2>
+        <div class="form-group">
+            <label for="propagandaCountry">Propaganda Target Country</label>
+            <input type="text" id="propagandaCountry" placeholder="Enter country name">
         </div>
-        
-
-        
-      </div>
-    </nav>
-  </div>
-</header>
-<!-- /navigation -->
-
-<section class="section-sm">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto">
-        
-        <a href="/categories/history-and-taiwan"
-          class="text-primary">History and taiwan</a>
-        
-        <h2>兵棋推演背後的核威脅：中美對峙與臺灣議題的新思考</h2>
-        <div class="mb-3 post-meta">
-          <span>By Jeremy Chen</span>
-          
-          <span class="border-bottom border-primary px-2 mx-1"></span>
-          <span>01 December 2024</span>
-          
+        <div class="form-group">
+            <label for="sanctionCountry">Sanction Target Country</label>
+            <input type="text" id="sanctionCountry" placeholder="Enter country name">
         </div>
-        
-        <img src="https://s0914712.github.io/images/post/post-2.jpg" class="img-fluid w-100 mb-4" alt="兵棋推演背後的核威脅：中美對峙與臺灣議題的新思考">
-        
-        <div class="content mb-5">
-          <!-- raw HTML omitted -->
-<h1 id="兵棋推演背後的核威脅中美對峙與臺灣議題的新思考">兵棋推演背後的核威脅：中美對峙與臺灣議題的新思考</h1>
-<p>2024 年 12 月 13 日，華盛頓智庫 CSIS 公布了一份名為《面對世界末日的核威懾》的兵棋推演報告，探討中美於臺灣衝突情境下使用核武與外交手段的可能後果。不少媒體過度強調「誰勝誰負」，忽略了這場研究真正的重點：核戰與外交決策的風險。</p>
-<hr>
-<h2 id="一csis-兵棋推演重點與意義">一、CSIS 兵棋推演：重點與意義</h2>
-<h3 id="1-沒有臺灣隊而是聚焦核武策略">1. 沒有「臺灣隊」，而是聚焦核武策略</h3>
-<p>在這場兵棋推演中，臺灣並未被設置成「隊伍」登場，且研究者在設定中明確指出「臺灣不會中途投降」。因此，模擬的重點不是「臺灣能否抵抗多久」，而是美中雙方在衝突中是否以及如何使用核武與外交手段。</p>
-<h3 id="2-研究結果未有絕對勝者">2. 研究結果：未有絕對勝者</h3>
-<p>報告指出，若雙方持續升級核衝突，最終往往以「兩敗俱傷」收場。若一方願意讓步、提供理性下台階，則衝突可能趨於和緩。這也呼應了研究的核心：探討如何避免核災難，而非聚焦軍事兵棋推演的登陸時間或傷亡規模。</p>
-<h3 id="3-啟示核武作為最後手段的威脅">3. 啟示：核武作為最後手段的威脅</h3>
-<p>兵棋推演顯示，一旦某方在戰場遭遇重大挫敗，即可能考慮使用核武。若雙方互不退讓，局勢恐進一步升級，最終導致毀滅性後果。</p>
-<hr>
-<h2 id="二臺灣媒體解讀為何會失焦">二、臺灣媒體解讀：為何會失焦？</h2>
-<h3 id="1-標題簡化與新聞效應">1. 標題簡化與新聞效應</h3>
-<p>兵棋推演的複雜情境常被簡化為「幾勝幾敗」的二分法，雖能吸引讀者注意，但忽略了核武風險與外交博弈的深層意義。當媒體報導的焦點僅在「輸贏」，讀者便容易忽視核戰風險的防範與因應。</p>
-<h3 id="2-核議題報導的挑戰">2. 核議題報導的挑戰</h3>
-<p>由於地緣關係，臺灣媒體對國際軍事動態高度敏感；但兵棋推演與核武議題的深度分析需要時間與專業知識。CSIS 的英文報告達 200 多頁，若為了搶流量與時效，媒體可能僅截取部分重點甚至以偏概全，造成焦點偏移。</p>
-<hr>
-<h2 id="三全球核武庫擴張下的因應之道">三、全球核武庫擴張下的因應之道</h2>
-<p>根據 2024 年 6 月瑞典斯德哥爾摩國際和平研究所（SIPRI）的年度報告，估計中國核武庫的彈頭數量已從 2023 年 1 月的 410 枚增至 2024 年 1 月的 500 枚。</p>
-<ul>
-<li><strong>核武數量的背後含義</strong>：不僅是核彈頭的增長，更突顯出大國間戰略影響力的競逐。</li>
-<li><strong>應對之道</strong>：美國學者呼籲重新評估核武部署，同時推動多邊或雙邊機制管控核武發展，降低擦槍走火風險。如同古巴危機時的經驗，提供「下台階」是避免全面衝突的關鍵。</li>
-</ul>
-<hr>
-<h2 id="四兵棋推演結果分析">四、兵棋推演結果分析</h2>
-<h3 id="結果概況">結果概況</h3>
-<table>
-  <thead>
-      <tr>
-          <th><strong>美方隊伍</strong></th>
-          <th><strong>中方隊伍</strong></th>
-          <th><strong>最後結果</strong></th>
-          <th><strong>發生次數</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>美方始終保持冷靜（局勢美方有利）</td>
-          <td>中方冷靜避免衝突</td>
-          <td>中方最終認輸 → 美方勝</td>
-          <td>4</td>
-      </tr>
-      <tr>
-          <td>美方始終保持冷靜（局勢美方有利）</td>
-          <td>中方使用 EMP，升高局勢</td>
-          <td>美方勝</td>
-          <td>1</td>
-      </tr>
-      <tr>
-          <td>美方始終保持冷靜（局勢美方有利）</td>
-          <td>中方使用 EMP，但美方不理會</td>
-          <td>美方勝</td>
-          <td>1</td>
-      </tr>
-      <tr>
-          <td>戰況膠著（美方兩次使用 EMP 彈）</td>
-          <td>中方率先使用核武</td>
-          <td>1. 美方使用核武 → 回到戰前</td>
-          <td>1</td>
-      </tr>
-      <tr>
-          <td></td>
-          <td></td>
-          <td>2. 美方對設施核攻擊 → 兩敗俱傷</td>
-          <td>3</td>
-      </tr>
-      <tr>
-          <td></td>
-          <td></td>
-          <td>3. 美方少量核武反制軍事基地 → 中方勝</td>
-          <td>4</td>
-      </tr>
-      <tr>
-          <td>美方一開始挫敗</td>
-          <td>中方冷靜</td>
-          <td>中方勝</td>
-          <td>1</td>
-      </tr>
-  </tbody>
-</table>
-<h3 id="結果分析">結果分析</h3>
-<ul>
-<li>中方對臺灣及美國在亞太的基地進行核攻擊。</li>
-<li>美方隨後對中方軍事或民用設施進行核報復。</li>
-<li>最終，多數模擬結果導向災難性結局。</li>
-</ul>
-<hr>
-<h2 id="五結論與呼籲">五、結論與呼籲</h2>
-<p>中美兩強的核態勢持續升溫，臺海問題被視為一大導火線。然而，正如這次兵棋推演所揭示的，當核武成為博弈手段時，勝利已經變得模糊不清。任何一方的絕對勝利都將帶來難以彌補的浩劫。</p>
-<ul>
-<li><strong>決策者與媒體責任</strong>：思考如何避免核戰的風險。是繼續比拚火力，還是尋求更多外交與對話的可能性？</li>
-</ul>
-<hr>
-<h2 id="參考資料">參考資料</h2>
-<ul>
-<li>Cancian, Mark, Matthew Cancian, and Eric Heginbotham. <em>Confronting Armageddon: Wargaming Nuclear Deterrence and Its Failures in a U.S.–China Conflict over Taiwan.</em> Washington, DC: Center for Strategic and International Studies (CSIS), December 2024. <a href="https://csis-website-prod.s3.amazonaws.com/s3fs-public/2024-12/241213_Cancian_Confronting_Armageddon.pdf?VersionId=WyqddCThZRiniczNwXHKcQHgOmUP8CH8">閱讀報告</a></li>
-<li>Stockholm International Peace Research Institute (SIPRI). <em>Role of Nuclear Weapons Grows as Geopolitical Relations Deteriorate—New SIPRI Yearbook Out Now.</em> Press Release, June 17, 2024. <a href="https://www.sipri.org/media/press-release/2024/role-nuclear-weapons-grows-geopolitical-relations-deteriorate-new-sipri-yearbook-out-now">閱讀報告</a></li>
-<li>Matthew Kroenig. <em>The Logic of American Nuclear Strategy: Why Strategic Superiority Matters.</em> New York: Oxford Academic Books, 2018.</li>
-</ul>
+        <button id="applyPropagandaBtn">Apply Propaganda</button>
+        <button id="applySanctionBtn">Apply Sanction</button>
+    </div>
 
-        </div>
+    <!-- 顯示圖表的區域 -->
+    <div class="card">
+        <h2 class="card-title">Network Visualization</h2>
+        <div id="imagesContainer"></div>
+    </div>
 
-        
-        <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
+    <div id="messageContainer"></div>
+
+    <script>
+        // 用於顯示訊息的函式
+        function showMessage(message, isError = false) {
+            const messageContainer = document.getElementById('messageContainer');
+            messageContainer.innerHTML = `
+                <div class="message ${isError ? 'error' : 'success'}">
+                    ${message}
+                </div>
+            `;
         }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "s0914712" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-      </div>
-    </div>
-  </div>
-</section>
 
+        // 動態增加關係輸入欄位
+        const relationsContainer = document.getElementById('relationsContainer');
+        const addRelationBtn = document.getElementById('addRelationBtn');
 
+        addRelationBtn.addEventListener('click', () => {
+            const relationGroup = document.createElement('div');
+            relationGroup.className = 'relation-group';
 
-<footer class="text-capitalize">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 text-center mb-5">
-        <a href="https://s0914712.github.io/"><img src="https://s0914712.github.io/images/logo.jpg" alt="chen blog s091sdaf"></a>
-      </div>
-               
-      <div class="col-lg-3 col-sm-6 mb-5">
-        <h6 class="mb-4">Contact Me</h6>
-        <ul class="list-unstyled">
-          
-          <li class="mb-3"><a class="text-dark" href="tel:0912391259"><i
-                class="ti-mobile mr-3 text-primary"></i>0912391259</a></li>
-          
-                     
-          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>US, Taiwan</li>
-          
-                     
-          <li class="mb-3"><a class="text-dark" href="mailto:s0914712@email.com"><i
-                class="ti-email mr-3 text-primary"></i>s0914712@email.com</a>
-          
-          </li>
-        </ul>
-      </div>
-      
-      <div class="col-lg-3 col-sm-6 mb-5">
-        <h6 class="mb-4">Social Contacts</h6>
-        <ul class="list-unstyled">
-          
-          <li class="mb-3"><a class="text-dark" href="#">facebook</a></li>
-          
-          <li class="mb-3"><a class="text-dark" href="#">twitter</a></li>
-          
-          <li class="mb-3"><a class="text-dark" href="#">instagram</a></li>
-          
-          <li class="mb-3"><a class="text-dark" href="#">github</a></li>
-          
-          <li class="mb-3"><a class="text-dark" href="#">linkedin</a></li>
-          
-        </ul>
-      </div>
-      <div class="col-lg-3 col-sm-6 mb-5">
-        <h6 class="mb-4">Categories</h6>
-        <ul class="list-unstyled">
-          <li class="mb-3"><a class="text-dark"
-              href="/categories/ai%e8%a7%a3%e6%b1%ba%e8%bb%8d%e4%ba%8b%e5%95%8f%e9%a1%8c/">Ai解決軍事問題</a>
-          </li>
-          <li class="mb-3"><a class="text-dark"
-              href="/categories/history-and-taiwan/">History and taiwan</a>
-          </li>
-          <li class="mb-3"><a class="text-dark"
-              href="/categories/html-css/">HTML &amp; css</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-3 col-sm-6 mb-5">
-        <h6 class="mb-4">Quick Links</h6>
-        <ul class="list-unstyled">
-          
-          <li class="mb-3"><a class="text-dark" href="https://s0914712.github.io/about/">About</a></li>
-          
-          <li class="mb-3"><a class="text-dark" href="https://s0914712.github.io/blog/">Post</a></li>
-          
-          <li class="mb-3"><a class="text-dark" href="https://s0914712.github.io/contact/">Contact</a></li>
-          
-        </ul>
-      </div>
-      <div class="col-12 border-top py-4 text-center">
-        | copyright © 2021 <a href="https://themefisher.com/hugo-themes/">Chen</a> All Rights Reserved |
-      </div>
-    </div>
-  </div>
-</footer>
+            const country1Input = document.createElement('input');
+            country1Input.type = 'text';
+            country1Input.placeholder = 'Country 1';
+            country1Input.required = true;
 
-<script>
-  var indexURL = "https://s0914712.github.io/index.json"
-</script>
+            const country2Input = document.createElement('input');
+            country2Input.type = 'text';
+            country2Input.placeholder = 'Country 2';
+            country2Input.required = true;
 
-<!-- JS Plugins -->
+            const relationSelect = document.createElement('select');
+            relationSelect.required = true;
+            for (let i = 1; i <= 5; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = `Relation ${i}`;
+                relationSelect.appendChild(option);
+            }
 
-<script src="https://s0914712.github.io/plugins/jQuery/jquery.min.js"></script>
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = 'Remove';
+            removeBtn.type = 'button';
+            removeBtn.addEventListener('click', () => {
+                relationsContainer.removeChild(relationGroup);
+            });
 
-<script src="https://s0914712.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+            relationGroup.appendChild(country1Input);
+            relationGroup.appendChild(country2Input);
+            relationGroup.appendChild(relationSelect);
+            relationGroup.appendChild(removeBtn);
+            relationsContainer.appendChild(relationGroup);
+        });
 
-<script src="https://s0914712.github.io/plugins/slick/slick.min.js"></script>
+        // 生成網絡圖表
+        const generateNetworkBtn = document.getElementById('generateNetworkBtn');
+        generateNetworkBtn.addEventListener('click', async () => {
+            const relations = [];
+            const relationGroups = document.querySelectorAll('.relation-group');
 
-<script src="https://s0914712.github.io/plugins/venobox/venobox.min.js"></script>
+            // 收集所有關係
+            relationGroups.forEach(group => {
+                const country1 = group.querySelector('input[type="text"]:nth-child(1)').value.trim();
+                const country2 = group.querySelector('input[type="text"]:nth-child(2)').value.trim();
+                const relation = group.querySelector('select').value;
 
-<script src="https://s0914712.github.io/plugins/search/fuse.min.js"></script>
+                if (country1 && country2 && relation) {
+                    relations.push({
+                        country1,
+                        country2,
+                        relation: parseInt(relation, 10)
+                    });
+                }
+            });
 
-<script src="https://s0914712.github.io/plugins/search/mark.js"></script>
+            if (relations.length === 0) {
+                showMessage('Please add at least one relation.', true);
+                return;
+            }
 
-<script src="https://s0914712.github.io/plugins/search/search.js"></script>
+            try {
+                const response = await fetch('https://us-central1-gen-lang-client-0351693852.cloudfunctions.net/function-2/design-network', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ relations })
+                });
 
-<!-- Main Script -->
+                const data = await response.json();
+                if (data.image) {
+                    const container = document.getElementById('imagesContainer');
+                    container.innerHTML = '';
+                    const img = document.createElement('img');
+                    img.src = `data:image/png;base64,${data.image}`;
+                    container.appendChild(img);
+                } else {
+                    showMessage(data.error || 'No image returned.', true);
+                }
+            } catch (err) {
+                showMessage('Failed to generate network.', true);
+            }
+        });
 
-<script src="https://s0914712.github.io/js/script.min.js"></script>
+        // 應用 Propaganda
+        const applyPropagandaBtn = document.getElementById('applyPropagandaBtn');
+        applyPropagandaBtn.addEventListener('click', async () => {
+            const country = document.getElementById('propagandaCountry').value.trim();
+            if (!country) {
+                showMessage('Please enter a country name.', true);
+                return;
+            }
 
+            try {
+                const response = await fetch('https://us-central1-gen-lang-client-0351693852.cloudfunctions.net/function-2/apply-propaganda', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ country })
+                });
 
+                const data = await response.json();
+                if (data.image) {
+                    const container = document.getElementById('imagesContainer');
+                    container.innerHTML = '';
+                    const img = document.createElement('img');
+                    img.src = `data:image/png;base64,${data.image}`;
+                    container.appendChild(img);
+                } else {
+                    showMessage(data.error || 'No image returned.', true);
+                }
+            } catch (err) {
+                showMessage('Failed to apply propaganda.', true);
+            }
+        });
 
+        // 應用 Sanction
+        const applySanctionBtn = document.getElementById('applySanctionBtn');
+        applySanctionBtn.addEventListener('click', async () => {
+            const country = document.getElementById('sanctionCountry').value.trim();
+            if (!country) {
+                showMessage('Please enter a country name.', true);
+                return;
+            }
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
-<div id="js-cookie-box" class="cookie-box cookie-box-hide">
-	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
-</div>
-<script>
-	(function ($) {
-		const cookieBox = document.getElementById('js-cookie-box');
-		const cookieButton = document.getElementById('js-cookie-button');
-		if (!Cookies.get('cookie-box')) {
-			cookieBox.classList.remove('cookie-box-hide');
-			cookieButton.onclick = function () {
-				Cookies.set('cookie-box', true, {
-					expires:  2 
-				});
-				cookieBox.classList.add('cookie-box-hide');
-			};
-		}
-	})(jQuery);
-</script>
+            try {
+                const response = await fetch('https://us-central1-gen-lang-client-0351693852.cloudfunctions.net/function-2/apply-sanction', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ country })
+                });
 
-
-<style>
-.cookie-box {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  z-index: 9999;
-  padding: 1rem 2rem;
-  background: rgb(71, 71, 71);
-  transition: all .75s cubic-bezier(.19, 1, .22, 1);
-  color: #fdfdfd;
-}
-
-.cookie-box-hide {
-  display: none;
-}
-</style>
+                const data = await response.json();
+                if (data.image) {
+                    const container = document.getElementById('imagesContainer');
+                    container.innerHTML = '';
+                    const img = document.createElement('img');
+                    img.src = `data:image/png;base64,${data.image}`;
+                    container.appendChild(img);
+                } else {
+                    showMessage(data.error || 'No image returned.', true);
+                }
+            } catch (err) {
+                showMessage('Failed to apply sanction.', true);
+            }
+        });
+    </script>
 </body>
 </html>
