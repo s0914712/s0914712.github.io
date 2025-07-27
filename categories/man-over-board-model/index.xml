@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Man Over Board Model on chen blog s091sdaf</title>
+    <link>https://s0914712.github.io/categories/man-over-board-model/</link>
+    <description>Recent content in Man Over Board Model on chen blog s091sdaf</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Dec 2024 10:07:47 +0600</lastBuildDate>
+    <atom:link href="https://s0914712.github.io/categories/man-over-board-model/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>從零開始建立人員落水軌跡預測模型(一)NETCDF檔案介紹</title>
+      <link>https://s0914712.github.io/blog/post-8/</link>
+      <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
+      <guid>https://s0914712.github.io/blog/post-8/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h2 id=&#34;1-概述-what--why&#34;&gt;1. 概述 (What &amp;amp; Why)&lt;/h2&gt;&#xA;&lt;p&gt;NetCDF 是一套為「科學陣列型資料」設計的 &lt;strong&gt;自描述 (self-describing)&lt;/strong&gt;、&lt;strong&gt;跨平台 (portable)&lt;/strong&gt;、&lt;strong&gt;可擴充 (extensible)&lt;/strong&gt; 的資料模型與檔案格式，同時也包含一組 API 函式庫。典型應用領域包含：氣象、海洋、氣候、遙測、模式模擬（如大氣模式、海流、浪場）等。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

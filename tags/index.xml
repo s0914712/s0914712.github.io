@@ -9,6 +9,13 @@
     <lastBuildDate>Sun, 01 Dec 2024 10:07:47 +0600</lastBuildDate>
     <atom:link href="https://s0914712.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>AI</title>
+      <link>https://s0914712.github.io/tags/ai/</link>
+      <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
+      <guid>https://s0914712.github.io/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Anaconda Plan</title>
       <link>https://s0914712.github.io/tags/anaconda-plan/</link>
       <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
@@ -37,6 +44,20 @@
       <description></description>
     </item>
     <item>
+      <title>Military</title>
+      <link>https://s0914712.github.io/tags/military/</link>
+      <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
+      <guid>https://s0914712.github.io/tags/military/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PLA</title>
+      <link>https://s0914712.github.io/tags/pla/</link>
+      <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
+      <guid>https://s0914712.github.io/tags/pla/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Taiwan</title>
       <link>https://s0914712.github.io/tags/taiwan/</link>
       <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
@@ -58,6 +79,13 @@
       <description></description>
     </item>
     <item>
+      <title>人員落水</title>
+      <link>https://s0914712.github.io/tags/%E4%BA%BA%E5%93%A1%E8%90%BD%E6%B0%B4/</link>
+      <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
+      <guid>https://s0914712.github.io/tags/%E4%BA%BA%E5%93%A1%E8%90%BD%E6%B0%B4/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>兵推 WarGame</title>
       <link>https://s0914712.github.io/tags/%E5%85%B5%E6%8E%A8-wargame/</link>
       <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
@@ -65,31 +93,38 @@
       <description></description>
     </item>
     <item>
-      <title>AI</title>
-      <link>https://s0914712.github.io/tags/ai/</link>
-      <pubDate>Fri, 29 Nov 2024 10:07:47 +0600</pubDate>
-      <guid>https://s0914712.github.io/tags/ai/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Military</title>
-      <link>https://s0914712.github.io/tags/military/</link>
-      <pubDate>Fri, 29 Nov 2024 10:07:47 +0600</pubDate>
-      <guid>https://s0914712.github.io/tags/military/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>PLA</title>
-      <link>https://s0914712.github.io/tags/pla/</link>
-      <pubDate>Fri, 29 Nov 2024 10:07:47 +0600</pubDate>
-      <guid>https://s0914712.github.io/tags/pla/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>深度學習</title>
       <link>https://s0914712.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</link>
-      <pubDate>Fri, 29 Nov 2024 10:07:47 +0600</pubDate>
+      <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
       <guid>https://s0914712.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>漂流</title>
+      <link>https://s0914712.github.io/tags/%E6%BC%82%E6%B5%81/</link>
+      <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
+      <guid>https://s0914712.github.io/tags/%E6%BC%82%E6%B5%81/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>軌跡預測</title>
+      <link>https://s0914712.github.io/tags/%E8%BB%8C%E8%B7%A1%E9%A0%90%E6%B8%AC/</link>
+      <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
+      <guid>https://s0914712.github.io/tags/%E8%BB%8C%E8%B7%A1%E9%A0%90%E6%B8%AC/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>軍事動態</title>
+      <link>https://s0914712.github.io/tags/%E8%BB%8D%E4%BA%8B%E5%8B%95%E6%85%8B/</link>
+      <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
+      <guid>https://s0914712.github.io/tags/%E8%BB%8D%E4%BA%8B%E5%8B%95%E6%85%8B/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>軍演</title>
+      <link>https://s0914712.github.io/tags/%E8%BB%8D%E6%BC%94/</link>
+      <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
+      <guid>https://s0914712.github.io/tags/%E8%BB%8D%E6%BC%94/</guid>
       <description></description>
     </item>
     <item>
@@ -97,20 +132,6 @@
       <link>https://s0914712.github.io/tags/%E8%88%AA%E6%AF%8D/</link>
       <pubDate>Fri, 29 Nov 2024 10:07:47 +0600</pubDate>
       <guid>https://s0914712.github.io/tags/%E8%88%AA%E6%AF%8D/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>軍事動態</title>
-      <link>https://s0914712.github.io/tags/%E8%BB%8D%E4%BA%8B%E5%8B%95%E6%85%8B/</link>
-      <pubDate>Fri, 29 Nov 2024 10:07:47 +0600</pubDate>
-      <guid>https://s0914712.github.io/tags/%E8%BB%8D%E4%BA%8B%E5%8B%95%E6%85%8B/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>軍演</title>
-      <link>https://s0914712.github.io/tags/%E8%BB%8D%E6%BC%94/</link>
-      <pubDate>Tue, 29 Oct 2024 10:07:47 +0600</pubDate>
-      <guid>https://s0914712.github.io/tags/%E8%BB%8D%E6%BC%94/</guid>
       <description></description>
     </item>
     <item>

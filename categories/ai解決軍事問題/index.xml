@@ -6,8 +6,15 @@
     <description>Recent content in AI解決軍事問題 on chen blog s091sdaf</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 29 Nov 2024 10:07:47 +0600</lastBuildDate>
+    <lastBuildDate>Sun, 01 Dec 2024 10:07:47 +0600</lastBuildDate>
     <atom:link href="https://s0914712.github.io/categories/ai%E8%A7%A3%E6%B1%BA%E8%BB%8D%E4%BA%8B%E5%95%8F%E9%A1%8C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>只靠每天的架次數預測的Prophet與LSTM 模型</title>
+      <link>https://s0914712.github.io/blog/post-9/</link>
+      <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
+      <guid>https://s0914712.github.io/blog/post-9/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h2 id=&#34;長短期記憶神經網路&#34;&gt;長短期記憶神經網路&lt;/h2&gt;&#xA;&lt;p&gt;當我們在理解一件事情的時候，通常不會每次都從頭開始學習，而是透過既有的知識與記憶來理解當下遇到的問題；事件的發生通常具有連續性，也就是一連串的因果關係，或是一個持續不斷變動的結果。在機器學習模型的發展中，引入這種遞歸 (recurrent) 的概念，是遞歸神經網路與其他神經網路模型 (如 CNN) 相比，較為創新的地方。長短期記憶模型則是改善了遞歸神經網路在長期記憶上的一些不足，因為其強大的辨識能力，可以有效的對上下文產生連結，現在已大量運用在自然語言理解 (例如語音轉文字，翻譯，產生手寫文字)，圖像與影像辨識等應用。&#xA;在這邊我先不介紹LSTM的原理，因為這個專案並不是企圖改進LSTM的架構，大家只要知道他是具有理解時間關係的網路結構就可以了，既然prophet 和LSTM 都可以進行時間序列的處理 那我們就使用這兩個做個比較。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>使用機器學習 預測軍事動態-航母篇</title>
       <link>https://s0914712.github.io/blog/post-4/</link>

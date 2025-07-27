@@ -23,24 +23,24 @@
       <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h1 id=&#34;兵棋推演背後的核威脅中美對峙與臺灣議題的新思考&#34;&gt;兵棋推演背後的核威脅：中美對峙與臺灣議題的新思考&lt;/h1&gt;&#xA;&lt;p&gt;2024 年 12 月 13 日，華盛頓智庫 CSIS 公布了一份名為《面對世界末日的核威懾》的兵棋推演報告，探討中美於臺灣衝突情境下使用核武與外交手段的可能後果。不少媒體過度強調「誰勝誰負」，忽略了這場研究真正的重點：核戰與外交決策的風險。&lt;/p&gt;</description>
     </item>
     <item>
+      <title>只靠每天的架次數預測的Prophet與LSTM 模型</title>
+      <link>https://s0914712.github.io/blog/post-9/</link>
+      <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
+      <guid>https://s0914712.github.io/blog/post-9/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h2 id=&#34;長短期記憶神經網路&#34;&gt;長短期記憶神經網路&lt;/h2&gt;&#xA;&lt;p&gt;當我們在理解一件事情的時候，通常不會每次都從頭開始學習，而是透過既有的知識與記憶來理解當下遇到的問題；事件的發生通常具有連續性，也就是一連串的因果關係，或是一個持續不斷變動的結果。在機器學習模型的發展中，引入這種遞歸 (recurrent) 的概念，是遞歸神經網路與其他神經網路模型 (如 CNN) 相比，較為創新的地方。長短期記憶模型則是改善了遞歸神經網路在長期記憶上的一些不足，因為其強大的辨識能力，可以有效的對上下文產生連結，現在已大量運用在自然語言理解 (例如語音轉文字，翻譯，產生手寫文字)，圖像與影像辨識等應用。&#xA;在這邊我先不介紹LSTM的原理，因為這個專案並不是企圖改進LSTM的架構，大家只要知道他是具有理解時間關係的網路結構就可以了，既然prophet 和LSTM 都可以進行時間序列的處理 那我們就使用這兩個做個比較。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>從零開始建立人員落水軌跡預測模型(一)NETCDF檔案介紹</title>
+      <link>https://s0914712.github.io/blog/post-8/</link>
+      <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
+      <guid>https://s0914712.github.io/blog/post-8/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h2 id=&#34;1-概述-what--why&#34;&gt;1. 概述 (What &amp;amp; Why)&lt;/h2&gt;&#xA;&lt;p&gt;NetCDF 是一套為「科學陣列型資料」設計的 &lt;strong&gt;自描述 (self-describing)&lt;/strong&gt;、&lt;strong&gt;跨平台 (portable)&lt;/strong&gt;、&lt;strong&gt;可擴充 (extensible)&lt;/strong&gt; 的資料模型與檔案格式，同時也包含一組 API 函式庫。典型應用領域包含：氣象、海洋、氣候、遙測、模式模擬（如大氣模式、海流、浪場）等。&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>歷史上的「蟒蛇」策略</title>
       <link>https://s0914712.github.io/blog/post-7/</link>
       <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
       <guid>https://s0914712.github.io/blog/post-7/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h1 id=&#34;歷史上的蟒蛇策略&#34;&gt;歷史上的「蟒蛇」策略&lt;/h1&gt;&#xA;&lt;h2 id=&#34;蟒蛇一詞的起源&#34;&gt;「蟒蛇」一詞的起源&lt;/h2&gt;&#xA;&lt;p&gt;海軍司令唐華日前接受《經濟學人》訪問時提到，中共正企圖利用「蟒蛇策略」（&lt;em&gt;Anaconda Strategy&lt;/em&gt;）壓縮臺灣，並隨時準備執行封鎖。「蟒蛇」一詞可追溯至美國內戰（1861–1865）期間，插畫家 J. B. 艾略特創作了一幅名為《史考特的大蟒蛇計畫》（&lt;em&gt;Scott&amp;rsquo;s Great Snake&lt;/em&gt;）的插畫，諷刺北方聯邦指揮官溫菲爾德·史考特（Winfield Scott）提出的戰爭計畫。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>歷史上的「蟒蛇」策略</title>
-      <link>https://s0914712.github.io/blog/post-8/</link>
-      <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
-      <guid>https://s0914712.github.io/blog/post-8/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h1 id=&#34;歷史上的蟒蛇策略&#34;&gt;歷史上的「蟒蛇」策略&lt;/h1&gt;&#xA;&lt;h2 id=&#34;蟒蛇一詞的起源&#34;&gt;「蟒蛇」一詞的起源&lt;/h2&gt;&#xA;&lt;p&gt;海軍司令唐華日前接受《經濟學人》訪問時提到，中共正企圖利用「蟒蛇策略」（&lt;em&gt;Anaconda Strategy&lt;/em&gt;）壓縮臺灣，並隨時準備執行封鎖。「蟒蛇」一詞可追溯至美國內戰（1861–1865）期間，插畫家 J. B. 艾略特創作了一幅名為《史考特的大蟒蛇計畫》（&lt;em&gt;Scott&amp;rsquo;s Great Snake&lt;/em&gt;）的插畫，諷刺北方聯邦指揮官溫菲爾德·史考特（Winfield Scott）提出的戰爭計畫。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>歷史上的「蟒蛇」策略</title>
-      <link>https://s0914712.github.io/blog/post-9/</link>
-      <pubDate>Sun, 01 Dec 2024 10:07:47 +0600</pubDate>
-      <guid>https://s0914712.github.io/blog/post-9/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h1 id=&#34;歷史上的蟒蛇策略&#34;&gt;歷史上的「蟒蛇」策略&lt;/h1&gt;&#xA;&lt;h2 id=&#34;蟒蛇一詞的起源&#34;&gt;「蟒蛇」一詞的起源&lt;/h2&gt;&#xA;&lt;p&gt;海軍司令唐華日前接受《經濟學人》訪問時提到，中共正企圖利用「蟒蛇策略」（&lt;em&gt;Anaconda Strategy&lt;/em&gt;）壓縮臺灣，並隨時準備執行封鎖。「蟒蛇」一詞可追溯至美國內戰（1861–1865）期間，插畫家 J. B. 艾略特創作了一幅名為《史考特的大蟒蛇計畫》（&lt;em&gt;Scott&amp;rsquo;s Great Snake&lt;/em&gt;）的插畫，諷刺北方聯邦指揮官溫菲爾德·史考特（Winfield Scott）提出的戰爭計畫。&lt;/p&gt;</description>
     </item>
     <item>
