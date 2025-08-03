@@ -147,7 +147,7 @@
           <span>By Jeremy Chen</span>
           
           <span class="border-bottom border-primary px-2 mx-1"></span>
-          <span>29 October 2019</span>
+          <span>29 October 2024</span>
           
         </div>
         
@@ -159,8 +159,8 @@
 Prophet 是一個由 Facebook Core Data Science Team 發表的開源代碼庫，用於時間序列預測，基於 Python 和 R 語言。相較於自行訓練時間序列預測模型，Prophet 的一些優點如下：‌</p>
 <p>改善模型選擇和調參的時間成本：時間序列有許多經典算法如 AR, VAR, ARMA, ARIMA, 指數平滑法等，選擇模型和調參的過程可被自動化。
 提供讓分析師、領域專家能根據經驗法則設定的參數：例如歷史週期、特殊節日的日期等，不會因為寫成制式套件就失去自己手刻的好處。</p>
-<p>安裝步驟
-(0) 首先建議要用 conda 創建虛擬環境，避免不同套件版本產生不必要的衝突</p>
+<h4 id="安裝步驟">安裝步驟</h4>
+<p>(0) 首先建議要用 conda 創建虛擬環境，避免不同套件版本產生不必要的衝突</p>
 <pre tabindex="0"><code>(base) $ conda create -n env_name python=3.7
 (base) $ conda activate env_name
 (env_name) $
@@ -171,8 +171,8 @@ Prophet 是一個由 Facebook Core Data Science Team 發表的開源代碼庫，
 <pre tabindex="0"><code>(env_name) $ conda install -c pystan conda-forge
 </code></pre><p>接著安裝 prophet （注意：v1.0 後的版本套件名稱為 prophet，不再是 fbprophet，網路上很多教學文章還以舊稱，記得在 import 時調整即可</p>
 <pre tabindex="0"><code>(env_name) $ conda install -c prophet conda-forge
-</code></pre><p>完成好以後就可以載入資料集進行分析
-像部隊活動這種多半具有週期性，我們可以結合上述的資料集每天的活動數量與戰備警巡的日期進行進一步的分析，戰備警巡為中共東部戰區位臺灣周邊海空域進行之例行性海空兵力聯合巡邏活動，在戰備警巡實施期間，我們可以由發布的新聞稿中觀察到中共軍機和船艦的活動大幅增加，機型種類也更加完整，中共發言人在例行記者會解釋：「戰備警巡主要目的在進一步提升部隊實戰化訓練水平，增強捍衛國家主權和領土完整的打仗能力，共軍將持續練兵備戰，繼續常態組織有關軍事行動」，而戰備警巡發生的時間往往都在晚上或是清晨，雖然只在我24浬處進行，但軍事行動已具備「猝然攻擊」的戰術戰法，使我國軍最前線海空人員疲於奔命，藉由統計戰備警巡新聞報導的資料，可以大致推估戰備警巡週期大月在6-14天不等，但這僅是藉由統計資料直觀判斷的結果，如果加上深度學習工具，我們更能做到「預測」，「Prophet」程式庫，進行時間序列預測</p>
+</code></pre><h4 id="分析">分析</h4>
+<p>像部隊活動這種多半具有週期性，我們可以結合上述的資料集每天的活動數量與戰備警巡的日期進行進一步的分析，戰備警巡為中共東部戰區位臺灣周邊海空域進行之例行性海空兵力聯合巡邏活動，在戰備警巡實施期間，我們可以由發布的新聞稿中觀察到中共軍機和船艦的活動大幅增加，機型種類也更加完整，中共發言人在例行記者會解釋：「戰備警巡主要目的在進一步提升部隊實戰化訓練水平，增強捍衛國家主權和領土完整的打仗能力，共軍將持續練兵備戰，繼續常態組織有關軍事行動」，而戰備警巡發生的時間往往都在晚上或是清晨，雖然只在我24浬處進行，但軍事行動已具備「猝然攻擊」的戰術戰法，使我國軍最前線海空人員疲於奔命，藉由統計戰備警巡新聞報導的資料，可以大致推估戰備警巡週期大月在6-14天不等，但這僅是藉由統計資料直觀判斷的結果，如果加上深度學習工具，我們更能做到「預測」，「Prophet」程式庫，進行時間序列預測</p>
 <pre tabindex="0"><code># 將 day.csv 匯入資料框
 # 由 parse_dates 指定代表日期的行
 df = pd.read_csv(&#39;day.csv&#39;, parse_dates=[1])
@@ -212,18 +212,18 @@ dates_test = DF_PLANE2[&#39;ds&#39;][test_index]
 m1 = Prophet(yearly_seasonality=True, weekly_seasonality=True,
     daily_seasonality=True,interval_width=0.9,
     seasonality_mode=&#39;multiplicative&#39;)
-</code></pre><p>##訓練與預測</p>
+</code></pre><h4 id="訓練與預測">訓練與預測</h4>
 <pre tabindex="0"><code>m1.fit(x_train)
 future1 = m1.make_future_dataframe(periods=61, freq=&#39;D&#39;)
-</code></pre><h1 id="確認結果">確認結果</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>display(future1<span style="color:#f92672">.</span>head())
-</span></span><span style="display:flex;"><span>display(future1<span style="color:#f92672">.</span>tail())
-</span></span><span style="display:flex;"><span>fcst1 <span style="color:#f92672">=</span> m1<span style="color:#f92672">.</span>predict(future1)
-</span></span><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> m1<span style="color:#f92672">.</span>plot_components(fcst1)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p>#繪製圖形</p>
+</code></pre><h4 id="確認結果">確認結果</h4>
+<pre tabindex="0"><code>display(future1.head())
+display(future1.tail())
+fcst1 = m1.predict(future1)
+fig = m1.plot_components(fcst1)
+plt.show()
+</code></pre><p>#繪製圖形</p>
 <p><img src="../../images/post/prophet1.png" alt="image"></p>
-<h1 id="計算與實際的差異值r2">計算與實際的差異值(R2)</h1>
+<h4 id="計算與實際的差異值r2">計算與實際的差異值(R2)</h4>
 <pre tabindex="0"><code># 只從 fcst2 中提取預測部分
 ypred2 = fcst2[-88:][[&#39;yhat&#39;]].values
 # 計算 R2 值
@@ -231,7 +231,7 @@ score2 = r2_score(ytest1, ypred2)
 # 確認結果
 r2_text2 = f&#39;R2 score:{score2:.4f}&#39;
 print(r2_text2)
-</code></pre><h1 id="繪製時間序列圖">繪製時間序列圖</h1>
+</code></pre><h4 id="繪製時間序列圖">繪製時間序列圖</h4>
 <pre tabindex="0"><code>import matplotlib.dates as mdates
 fig, ax = plt.subplots(figsize=(8, 4))
 
@@ -257,7 +257,7 @@ ax.set_xlim(sday, eday)
 ax.grid()
 ax.legend()
 ax.set_title(&#39;KJ-500 出現機率預測結果  &#39; + r2_text2)
-</code></pre><h2 id="輸出畫面">輸出畫面</h2>
+</code></pre><h4 id="輸出畫面">輸出畫面</h4>
 <p><img src="../../images/post/prophet3.png" alt="image"></p>
 <!-- raw HTML omitted -->
 
@@ -309,8 +309,8 @@ ax.set_title(&#39;KJ-500 出現機率預測結果  &#39; + r2_text2)
           <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>US, Taiwan</li>
           
                      
-          <li class="mb-3"><a class="text-dark" href="mailto:s0914712@email.com"><i
-                class="ti-email mr-3 text-primary"></i>s0914712@email.com</a>
+          <li class="mb-3"><a class="text-dark" href="mailto:s0914712@gmail.com"><i
+                class="ti-email mr-3 text-primary"></i>s0914712@gmail.com</a>
           
           </li>
         </ul>

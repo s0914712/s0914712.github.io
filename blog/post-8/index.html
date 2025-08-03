@@ -197,46 +197,46 @@
 <li>NetCDF Header 範例與逐行解釋</li>
 </ol>
 <p>原始 Header</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>netcdf example {
-</span></span><span style="display:flex;"><span>  dimensions:
-</span></span><span style="display:flex;"><span>    time = UNLIMITED ; // (10 currently)
-</span></span><span style="display:flex;"><span>    lat = 181 ;
-</span></span><span style="display:flex;"><span>    lon = 360 ;
-</span></span><span style="display:flex;"><span>  variables:
-</span></span><span style="display:flex;"><span>    double time(time) ;
-</span></span><span style="display:flex;"><span>      time:units = &#34;hours since 2025-07-20 00:00:00&#34; ;
-</span></span><span style="display:flex;"><span>      time:calendar = &#34;gregorian&#34; ;
-</span></span><span style="display:flex;"><span>    float lat(lat) ;
-</span></span><span style="display:flex;"><span>      lat:units = &#34;degrees_north&#34; ;
-</span></span><span style="display:flex;"><span>    float lon(lon) ;
-</span></span><span style="display:flex;"><span>      lon:units = &#34;degrees_east&#34; ;
-</span></span><span style="display:flex;"><span>    float temperature(time, lat, lon) ;
-</span></span><span style="display:flex;"><span>      temperature:long_name = &#34;Sea surface temperature&#34; ;
-</span></span><span style="display:flex;"><span>      temperature:units = &#34;K&#34; ;
-</span></span><span style="display:flex;"><span>      temperature:_FillValue = -9999.f ;
-</span></span><span style="display:flex;"><span>      temperature:scale_factor = 0.01f ;
-</span></span><span style="display:flex;"><span>      temperature:add_offset = 273.15f ;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  // global attributes:
-</span></span><span style="display:flex;"><span>    :title = &#34;Demo SST&#34; ;
-</span></span><span style="display:flex;"><span>    :history = &#34;2025-07-20T12:00:00Z created&#34; ;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>逐段說明</p>
+<pre tabindex="0"><code>netcdf example {
+  dimensions:
+    time = UNLIMITED ; // (10 currently)
+    lat = 181 ;
+    lon = 360 ;
+  variables:
+    double time(time) ;
+      time:units = &#34;hours since 2025-07-20 00:00:00&#34; ;
+      time:calendar = &#34;gregorian&#34; ;
+    float lat(lat) ;
+      lat:units = &#34;degrees_north&#34; ;
+    float lon(lon) ;
+      lon:units = &#34;degrees_east&#34; ;
+    float temperature(time, lat, lon) ;
+      temperature:long_name = &#34;Sea surface temperature&#34; ;
+      temperature:units = &#34;K&#34; ;
+      temperature:_FillValue = -9999.f ;
+      temperature:scale_factor = 0.01f ;
+      temperature:add_offset = 273.15f ;
+
+  // global attributes:
+    :title = &#34;Demo SST&#34; ;
+    :history = &#34;2025-07-20T12:00:00Z created&#34; ;
+}
+</code></pre><p>逐段說明</p>
 <p>維度宣告</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>dimensions:
-</span></span><span style="display:flex;"><span>  time = UNLIMITED ; // (10 currently)
-</span></span><span style="display:flex;"><span>  lat = 181 ;
-</span></span><span style="display:flex;"><span>  lon = 360 ;
-</span></span></code></pre></div><ul>
+<pre tabindex="0"><code>dimensions:
+  time = UNLIMITED ; // (10 currently)
+  lat = 181 ;
+  lon = 360 ;
+</code></pre><ul>
 <li>宣告 3 個維度：<code>time</code>、<code>lat</code>、<code>lon</code>。</li>
 <li><code>time = UNLIMITED</code> 表示此維度可增長（appendable），目前已有 10 筆（索引 0..9）。</li>
 <li><code>lat = 181</code>、<code>lon = 360</code> 為固定長度。例如：<code>lat</code> 可能為 -90 到 90（含端點，共 181 個點，步距 1°）；<code>lon</code> 可能為 0 到 359（共 360 個點）。</li>
 </ul>
 <p>時間變數</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>double time(time) ;
-</span></span><span style="display:flex;"><span>  time:units = &#34;hours since 2025-07-20 00:00:00&#34; ;
-</span></span><span style="display:flex;"><span>  time:calendar = &#34;gregorian&#34; ;
-</span></span></code></pre></div><ul>
+<pre tabindex="0"><code>double time(time) ;
+  time:units = &#34;hours since 2025-07-20 00:00:00&#34; ;
+  time:calendar = &#34;gregorian&#34; ;
+</code></pre><ul>
 <li><code>time(time)</code>：1 維時間座標變數。</li>
 <li><code>units</code> 採 CF 規範：「<code>&lt;時間單位&gt; since &lt;參考時間&gt;</code>」。此處表示「自 2025-07-20 00:00:00 起算的小時數」。
 <ul>
@@ -247,22 +247,22 @@
 <li><code>calendar=&quot;gregorian&quot;</code> 指定日曆系統。</li>
 </ul>
 <p>經緯度座標變數</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>float lat(lat) ;
-</span></span><span style="display:flex;"><span>  lat:units = &#34;degrees_north&#34; ;
-</span></span><span style="display:flex;"><span>float lon(lon) ;
-</span></span><span style="display:flex;"><span>  lon:units = &#34;degrees_east&#34; ;
-</span></span></code></pre></div><ul>
+<pre tabindex="0"><code>float lat(lat) ;
+  lat:units = &#34;degrees_north&#34; ;
+float lon(lon) ;
+  lon:units = &#34;degrees_east&#34; ;
+</code></pre><ul>
 <li>座標變數（coordinate variables）：名稱與維度相同。</li>
 <li>提供每個格點的地理位置（緯度、經度）。</li>
 </ul>
 <p>資料變數</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>float temperature(time, lat, lon) ;
-</span></span><span style="display:flex;"><span>  temperature:long_name = &#34;Sea surface temperature&#34; ;
-</span></span><span style="display:flex;"><span>  temperature:units = &#34;K&#34; ;
-</span></span><span style="display:flex;"><span>  temperature:_FillValue = -9999.f ;
-</span></span><span style="display:flex;"><span>  temperature:scale_factor = 0.01f ;
-</span></span><span style="display:flex;"><span>  temperature:add_offset = 273.15f ;
-</span></span></code></pre></div><ul>
+<pre tabindex="0"><code>float temperature(time, lat, lon) ;
+  temperature:long_name = &#34;Sea surface temperature&#34; ;
+  temperature:units = &#34;K&#34; ;
+  temperature:_FillValue = -9999.f ;
+  temperature:scale_factor = 0.01f ;
+  temperature:add_offset = 273.15f ;
+</code></pre><ul>
 <li><code>temperature</code> 為 3 維資料：<code>time × lat × lon</code>。</li>
 <li>使用「打包（packed）」策略：以 <code>scale_factor</code> 與 <code>add_offset</code> 壓縮存放範圍。
 <ul>
@@ -274,9 +274,9 @@
 <li><code>long_name</code> 與 <code>units</code> 為語意與顯示用 metadata。</li>
 </ul>
 <p>全域屬性</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>:title = &#34;Demo SST&#34; ;
-</span></span><span style="display:flex;"><span>:history = &#34;2025-07-20T12:00:00Z created&#34; ;
-</span></span></code></pre></div><ul>
+<pre tabindex="0"><code>:title = &#34;Demo SST&#34; ;
+:history = &#34;2025-07-20T12:00:00Z created&#34; ;
+</code></pre><ul>
 <li><code>title</code>：檔案標題。</li>
 <li><code>history</code>：處理沿革；每次加工可附加一段（建議包含時間戳與動作）。</li>
 </ul>
@@ -323,9 +323,9 @@
 <ol start="5">
 <li>Packed value 解碼範例（Python）</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>physical <span style="color:#f92672">=</span> scale_factor <span style="color:#f92672">*</span> stored <span style="color:#f92672">+</span> add_offset
-</span></span><span style="display:flex;"><span>physical[stored <span style="color:#f92672">==</span> fill_value] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>nan
-</span></span></code></pre></div><hr>
+<pre tabindex="0"><code>physical = scale_factor * stored + add_offset
+physical[stored == fill_value] = np.nan
+</code></pre><hr>
 <blockquote>
 <p>需要再擴充成 CF Conventions 教學、或輸出成 PDF / Word 版本，可再告訴我。</p>
 </blockquote>
@@ -333,22 +333,22 @@
 <h2 id="6-使用-xarray-讀取與操作-netcdf">6. 使用 xarray 讀取與操作 NetCDF</h2>
 <p>以下示範使用 <code>xarray</code>（結合 <code>netCDF4</code> 或 <code>h5netcdf</code> 後端）讀取、檢視、分析與寫回 NetCDF 的典型流程。</p>
 <h3 id="61-安裝">6.1 安裝</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install xarray netCDF4 cftime dask<span style="color:#f92672">[</span>complete<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 若需要壓縮或平行最佳化，可再安裝 zarr, h5netcdf 等</span>
-</span></span></code></pre></div><h3 id="62-基本開檔">6.2 基本開檔</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> xarray <span style="color:#66d9ef">as</span> xr
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>ds <span style="color:#f92672">=</span> xr<span style="color:#f92672">.</span>open_dataset(<span style="color:#e6db74">&#39;example.nc&#39;</span>)  <span style="color:#75715e"># 延遲讀取 (lazy)；僅讀 header/metadata</span>
-</span></span><span style="display:flex;"><span>print(ds)                            <span style="color:#75715e"># 類似 ncdump -h + 變數概觀</span>
-</span></span></code></pre></div><blockquote>
+<pre tabindex="0"><code>pip install xarray netCDF4 cftime dask[complete]
+# 若需要壓縮或平行最佳化，可再安裝 zarr, h5netcdf 等
+</code></pre><h3 id="62-基本開檔">6.2 基本開檔</h3>
+<pre tabindex="0"><code>import xarray as xr
+
+ds = xr.open_dataset(&#39;example.nc&#39;)  # 延遲讀取 (lazy)；僅讀 header/metadata
+print(ds)                            # 類似 ncdump -h + 變數概觀
+</code></pre><blockquote>
 <p><code>open_dataset</code> 預設是 lazy：真正的資料直到運算或 <code>.load()</code> 才讀入記憶體。</p>
 </blockquote>
 <h3 id="63-取出變數與座標">6.3 取出變數與座標</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>t <span style="color:#f92672">=</span> ds[<span style="color:#e6db74">&#39;temperature&#39;</span>]      <span style="color:#75715e"># DataArray</span>
-</span></span><span style="display:flex;"><span>lat <span style="color:#f92672">=</span> ds[<span style="color:#e6db74">&#39;lat&#39;</span>]
-</span></span><span style="display:flex;"><span>lon <span style="color:#f92672">=</span> ds[<span style="color:#e6db74">&#39;lon&#39;</span>]
-</span></span><span style="display:flex;"><span>print(t<span style="color:#f92672">.</span>dims, t<span style="color:#f92672">.</span>shape)     <span style="color:#75715e"># (&#39;time&#39;,&#39;lat&#39;,&#39;lon&#39;), (10,181,360)</span>
-</span></span></code></pre></div><h3 id="64-自動解碼時間scale_factor-與缺值">6.4 自動解碼時間、scale_factor 與缺值</h3>
+<pre tabindex="0"><code>t = ds[&#39;temperature&#39;]      # DataArray
+lat = ds[&#39;lat&#39;]
+lon = ds[&#39;lon&#39;]
+print(t.dims, t.shape)     # (&#39;time&#39;,&#39;lat&#39;,&#39;lon&#39;), (10,181,360)
+</code></pre><h3 id="64-自動解碼時間scale_factor-與缺值">6.4 自動解碼時間、scale_factor 與缺值</h3>
 <p>xarray 預設會依 CF Conventions 自動：</p>
 <ul>
 <li>將 <code>time</code> 轉為 <code>datetime64</code> 或 <code>cftime</code> 物件。</li>
@@ -357,29 +357,29 @@
 </ul>
 <p>可停用：<code>xr.open_dataset('example.nc', decode_times=False, mask_and_scale=False)</code>。</p>
 <h3 id="65-選取與切片">6.5 選取與切片</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 依座標值切片（最近鄰或對齊）</span>
-</span></span><span style="display:flex;"><span>subset <span style="color:#f92672">=</span> t<span style="color:#f92672">.</span>sel(time<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;2025-07-20T06:00:00&#39;</span>, lat<span style="color:#f92672">=</span>slice(<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">10</span>), lon<span style="color:#f92672">=</span>slice(<span style="color:#ae81ff">120</span>,<span style="color:#ae81ff">150</span>))
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 依索引切片</span>
-</span></span><span style="display:flex;"><span>t0 <span style="color:#f92672">=</span> t<span style="color:#f92672">.</span>isel(time<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
-</span></span></code></pre></div><h3 id="66-計算懶加速">6.6 計算（懶加速）</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 平均一段時間與空間（仍 lazy）</span>
-</span></span><span style="display:flex;"><span>mean_equatorial <span style="color:#f92672">=</span> t<span style="color:#f92672">.</span>sel(lat<span style="color:#f92672">=</span>slice(<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">5</span>))<span style="color:#f92672">.</span>mean(dim<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#39;time&#39;</span>,<span style="color:#e6db74">&#39;lat&#39;</span>))
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 觸發實際計算</span>
-</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> mean_equatorial<span style="color:#f92672">.</span>compute()  <span style="color:#75715e"># 或 .load()</span>
-</span></span></code></pre></div><blockquote>
+<pre tabindex="0"><code># 依座標值切片（最近鄰或對齊）
+subset = t.sel(time=&#39;2025-07-20T06:00:00&#39;, lat=slice(-10,10), lon=slice(120,150))
+# 依索引切片
+t0 = t.isel(time=0)
+</code></pre><h3 id="66-計算懶加速">6.6 計算（懶加速）</h3>
+<pre tabindex="0"><code># 平均一段時間與空間（仍 lazy）
+mean_equatorial = t.sel(lat=slice(-5,5)).mean(dim=(&#39;time&#39;,&#39;lat&#39;))
+# 觸發實際計算
+result = mean_equatorial.compute()  # 或 .load()
+</code></pre><blockquote>
 <p>若安裝與設定 Dask，xarray 會自動用 Dask array，便於大檔案平行/分塊運算。</p>
 </blockquote>
 <h3 id="67-設定-chunk適合大檔案">6.7 設定 Chunk（適合大檔案）</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ds <span style="color:#f92672">=</span> xr<span style="color:#f92672">.</span>open_dataset(<span style="color:#e6db74">&#39;example.nc&#39;</span>, chunks<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;time&#39;</span>: <span style="color:#ae81ff">50</span>})
-</span></span></code></pre></div><ul>
+<pre tabindex="0"><code>ds = xr.open_dataset(&#39;example.nc&#39;, chunks={&#39;time&#39;: 50})
+</code></pre><ul>
 <li><code>chunks</code> 對應 Dask 分塊大小；與 NetCDF chunk 不同，但影響執行時分佈計算。</li>
 <li>建議 time 維度 chunk 為常用分析窗口倍數。</li>
 </ul>
 <h3 id="68-多檔拼接-concatenation-與合併">6.8 多檔拼接 (Concatenation) 與合併</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 多檔沿 time 座標自動串接</span>
-</span></span><span style="display:flex;"><span>ds_all <span style="color:#f92672">=</span> xr<span style="color:#f92672">.</span>open_mfdataset(<span style="color:#e6db74">&#39;var_2025_0*.nc&#39;</span>, combine<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;by_coords&#39;</span>, parallel<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
-</span></span><span style="display:flex;"><span>                           data_vars<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;minimal&#39;</span>, coords<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;minimal&#39;</span>, compat<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;override&#39;</span>)
-</span></span></code></pre></div><p>常見參數：</p>
+<pre tabindex="0"><code># 多檔沿 time 座標自動串接
+ds_all = xr.open_mfdataset(&#39;var_2025_0*.nc&#39;, combine=&#39;by_coords&#39;, parallel=True,
+                           data_vars=&#39;minimal&#39;, coords=&#39;minimal&#39;, compat=&#39;override&#39;)
+</code></pre><p>常見參數：</p>
 <table>
   <thead>
       <tr>
@@ -407,37 +407,37 @@
   </tbody>
 </table>
 <h3 id="69-去除重複時間與排序">6.9 去除重複時間與排序</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;time&#39;</span> <span style="color:#f92672">in</span> ds_all<span style="color:#f92672">.</span>coords:
-</span></span><span style="display:flex;"><span>    ds_all <span style="color:#f92672">=</span> ds_all<span style="color:#f92672">.</span>sortby(<span style="color:#e6db74">&#39;time&#39;</span>)
-</span></span><span style="display:flex;"><span>    _, idx <span style="color:#f92672">=</span> xr<span style="color:#f92672">.</span>unique(ds_all<span style="color:#f92672">.</span>time, return_index<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(idx) <span style="color:#f92672">!=</span> ds_all<span style="color:#f92672">.</span>sizes[<span style="color:#e6db74">&#39;time&#39;</span>]:
-</span></span><span style="display:flex;"><span>        ds_all <span style="color:#f92672">=</span> ds_all<span style="color:#f92672">.</span>isel(time<span style="color:#f92672">=</span>idx<span style="color:#f92672">.</span>sortby(idx))
-</span></span></code></pre></div><h3 id="610-加入新計算結果">6.10 加入新計算結果</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ds_all[<span style="color:#e6db74">&#39;temp_anomaly&#39;</span>] <span style="color:#f92672">=</span> ds_all<span style="color:#f92672">.</span>temperature <span style="color:#f92672">-</span> ds_all<span style="color:#f92672">.</span>temperature<span style="color:#f92672">.</span>mean(<span style="color:#e6db74">&#39;time&#39;</span>)
-</span></span></code></pre></div><blockquote>
+<pre tabindex="0"><code>if &#39;time&#39; in ds_all.coords:
+    ds_all = ds_all.sortby(&#39;time&#39;)
+    _, idx = xr.unique(ds_all.time, return_index=True)
+    if len(idx) != ds_all.sizes[&#39;time&#39;]:
+        ds_all = ds_all.isel(time=idx.sortby(idx))
+</code></pre><h3 id="610-加入新計算結果">6.10 加入新計算結果</h3>
+<pre tabindex="0"><code>ds_all[&#39;temp_anomaly&#39;] = ds_all.temperature - ds_all.temperature.mean(&#39;time&#39;)
+</code></pre><blockquote>
 <p>新增的 <code>DataArray</code> 會自動繼承對齊座標。</p>
 </blockquote>
 <h3 id="611-寫回-netcdf">6.11 寫回 NetCDF</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>encoding <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;temperature&#39;</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;zlib&#39;</span>: <span style="color:#66d9ef">True</span>, <span style="color:#e6db74">&#39;complevel&#39;</span>: <span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#39;shuffle&#39;</span>: <span style="color:#66d9ef">True</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 指定 chunksizes (影響最終 NetCDF 物理 chunk)</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;chunksizes&#39;</span>: (<span style="color:#ae81ff">50</span>, ds_all<span style="color:#f92672">.</span>dims[<span style="color:#e6db74">&#39;lat&#39;</span>], ds_all<span style="color:#f92672">.</span>dims[<span style="color:#e6db74">&#39;lon&#39;</span>])
-</span></span><span style="display:flex;"><span>    },
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;temp_anomaly&#39;</span>: {<span style="color:#e6db74">&#39;zlib&#39;</span>: <span style="color:#66d9ef">True</span>, <span style="color:#e6db74">&#39;complevel&#39;</span>: <span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#39;shuffle&#39;</span>: <span style="color:#66d9ef">True</span>}
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>ds_all<span style="color:#f92672">.</span>to_netcdf(<span style="color:#e6db74">&#39;merged_with_anomaly.nc&#39;</span>, encoding<span style="color:#f92672">=</span>encoding)
-</span></span></code></pre></div><p>注意：</p>
+<pre tabindex="0"><code>encoding = {
+    &#39;temperature&#39;: {
+        &#39;zlib&#39;: True, &#39;complevel&#39;: 4, &#39;shuffle&#39;: True,
+        # 指定 chunksizes (影響最終 NetCDF 物理 chunk)
+        &#39;chunksizes&#39;: (50, ds_all.dims[&#39;lat&#39;], ds_all.dims[&#39;lon&#39;])
+    },
+    &#39;temp_anomaly&#39;: {&#39;zlib&#39;: True, &#39;complevel&#39;: 4, &#39;shuffle&#39;: True}
+}
+
+ds_all.to_netcdf(&#39;merged_with_anomaly.nc&#39;, encoding=encoding)
+</code></pre><p>注意：</p>
 <ul>
 <li><code>chunksizes</code> 是寫入 NetCDF 物理 chunk（與 <code>open_dataset(..., chunks=...)</code> 的記憶體分塊不同）。</li>
 <li>設定壓縮層級 1–6 通常平衡速度與壓縮比。</li>
 </ul>
 <h3 id="612-與-pandas-互動">6.12 與 Pandas 互動</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 取某經緯點時間序列，轉為 Pandas Series</span>
-</span></span><span style="display:flex;"><span>pt_series <span style="color:#f92672">=</span> ds_all<span style="color:#f92672">.</span>temperature<span style="color:#f92672">.</span>sel(lat<span style="color:#f92672">=</span><span style="color:#ae81ff">0.0</span>, lon<span style="color:#f92672">=</span><span style="color:#ae81ff">140.0</span>, method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;nearest&#39;</span>)
-</span></span><span style="display:flex;"><span>ser <span style="color:#f92672">=</span> pt_series<span style="color:#f92672">.</span>to_pandas()
-</span></span></code></pre></div><h3 id="613-常見錯誤排查">6.13 常見錯誤排查</h3>
+<pre tabindex="0"><code># 取某經緯點時間序列，轉為 Pandas Series
+pt_series = ds_all.temperature.sel(lat=0.0, lon=140.0, method=&#39;nearest&#39;)
+ser = pt_series.to_pandas()
+</code></pre><h3 id="613-常見錯誤排查">6.13 常見錯誤排查</h3>
 <table>
   <thead>
       <tr>
@@ -470,17 +470,17 @@
   </tbody>
 </table>
 <h3 id="614-快速範例從讀到分析再輸出">6.14 快速範例（從讀到分析再輸出）</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> xarray <span style="color:#66d9ef">as</span> xr
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1. 讀多檔</span>
-</span></span><span style="display:flex;"><span>files <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;var_2025_0*.nc&#39;</span>
-</span></span><span style="display:flex;"><span>ds <span style="color:#f92672">=</span> xr<span style="color:#f92672">.</span>open_mfdataset(files, combine<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;by_coords&#39;</span>, chunks<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;time&#39;</span>: <span style="color:#ae81ff">48</span>})
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. 時間排序</span>
-</span></span><span style="display:flex;"><span>ds <span style="color:#f92672">=</span> ds<span style="color:#f92672">.</span>sortby(<span style="color:#e6db74">&#39;time&#39;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. 計算季平均 (假設 time 是 hourly 資料)</span>
-</span></span><span style="display:flex;"><span>season_mean <span style="color:#f92672">=</span> ds<span style="color:#f92672">.</span>temperature<span style="color:#f92672">.</span>resample(time<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;3M&#39;</span>)<span style="color:#f92672">.</span>mean()
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. 儲存結果</span>
-</span></span><span style="display:flex;"><span>season_mean<span style="color:#f92672">.</span>to_netcdf(<span style="color:#e6db74">&#39;temperature_3M_mean.nc&#39;</span>)
-</span></span></code></pre></div><h3 id="615-小抄-cheat-sheet">6.15 小抄 (Cheat Sheet)</h3>
+<pre tabindex="0"><code>import xarray as xr
+# 1. 讀多檔
+files = &#39;var_2025_0*.nc&#39;
+ds = xr.open_mfdataset(files, combine=&#39;by_coords&#39;, chunks={&#39;time&#39;: 48})
+# 2. 時間排序
+ds = ds.sortby(&#39;time&#39;)
+# 3. 計算季平均 (假設 time 是 hourly 資料)
+season_mean = ds.temperature.resample(time=&#39;3M&#39;).mean()
+# 4. 儲存結果
+season_mean.to_netcdf(&#39;temperature_3M_mean.nc&#39;)
+</code></pre><h3 id="615-小抄-cheat-sheet">6.15 小抄 (Cheat Sheet)</h3>
 <table>
   <thead>
       <tr>
@@ -590,8 +590,8 @@
           <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>US, Taiwan</li>
           
                      
-          <li class="mb-3"><a class="text-dark" href="mailto:s0914712@email.com"><i
-                class="ti-email mr-3 text-primary"></i>s0914712@email.com</a>
+          <li class="mb-3"><a class="text-dark" href="mailto:s0914712@gmail.com"><i
+                class="ti-email mr-3 text-primary"></i>s0914712@gmail.com</a>
           
           </li>
         </ul>
