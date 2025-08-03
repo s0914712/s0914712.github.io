@@ -13,7 +13,7 @@
       <link>https://s0914712.github.io/blog/post-2/</link>
       <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
       <guid>https://s0914712.github.io/blog/post-2/</guid>
-      <description>&lt;h5 id=&#34;emphasis&#34;&gt;Emphasis&lt;/h5&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;認識 Prophet&#xA;Prophet 是一個由 Facebook Core Data Science Team 發表的開源代碼庫，用於時間序列預測，基於 Python 和 R 語言。相較於自行訓練時間序列預測模型，Prophet 的一些優點如下：‌&lt;/p&gt;</description>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;認識 Prophet&#xA;Prophet 是一個由 Facebook Core Data Science Team 發表的開源代碼庫，用於時間序列預測，基於 Python 和 R 語言。相較於自行訓練時間序列預測模型，Prophet 的一些優點如下：‌&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

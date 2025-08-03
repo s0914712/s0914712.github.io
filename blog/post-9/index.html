@@ -155,13 +155,13 @@
         
         <div class="content mb-5">
           <!-- raw HTML omitted -->
-<h2 id="長短期記憶神經網路">長短期記憶神經網路</h2>
+<p>長短期記憶神經網路</p>
 <p>當我們在理解一件事情的時候，通常不會每次都從頭開始學習，而是透過既有的知識與記憶來理解當下遇到的問題；事件的發生通常具有連續性，也就是一連串的因果關係，或是一個持續不斷變動的結果。在機器學習模型的發展中，引入這種遞歸 (recurrent) 的概念，是遞歸神經網路與其他神經網路模型 (如 CNN) 相比，較為創新的地方。長短期記憶模型則是改善了遞歸神經網路在長期記憶上的一些不足，因為其強大的辨識能力，可以有效的對上下文產生連結，現在已大量運用在自然語言理解 (例如語音轉文字，翻譯，產生手寫文字)，圖像與影像辨識等應用。
 在這邊我先不介紹LSTM的原理，因為這個專案並不是企圖改進LSTM的架構，大家只要知道他是具有理解時間關係的網路結構就可以了，既然prophet 和LSTM 都可以進行時間序列的處理 那我們就使用這兩個做個比較。</p>
-<h2 id="meta-prophet-簡介重點在於如何處理時間">Meta Prophet 簡介：重點在於如何處理時間</h2>
+<h1 id="meta-prophet-簡介重點在於如何處理時間">Meta Prophet 簡介：重點在於如何處理時間</h1>
 <p>Meta Prophet（全名：<strong>Facebook Prophet</strong>）是一款專門用於<strong>時間序列預測</strong>的開源工具，由 Facebook（Meta）開發。它以 Python 和 R 實作，設計目標是讓<strong>非專業統計人員</strong>也能輕鬆處理帶有季節性與節慶效應的時間序列數據。Prophet 被廣泛應用在營收、網站流量、銷售、需求等數據預測領域。</p>
 <hr>
-<h3 id="prophet-的核心概念與架構">Prophet 的核心概念與架構</h3>
+<h1 id="prophet-的核心概念與架構">Prophet 的核心概念與架構</h1>
 <p>Prophet 將時間序列建模公式拆成三大部分：
 [
 y(t) = g(t) + s(t) + h(t) + \epsilon_t
@@ -173,33 +173,33 @@ y(t) = g(t) + s(t) + h(t) + \epsilon_t
 <li><strong>ε</strong>：雜訊</li>
 </ul>
 <hr>
-<h3 id="prophet-處理時間的關鍵特點">Prophet 處理時間的關鍵特點</h3>
-<h3 id="1-自動識別時間欄位">1. 自動識別「時間」欄位</h3>
+<h1 id="prophet-處理時間的關鍵特點">Prophet 處理時間的關鍵特點</h1>
+<h1 id="1-自動識別時間欄位">1. 自動識別「時間」欄位</h1>
 <p>Prophet 要求資料有兩個欄位：</p>
 <ul>
 <li><code>ds</code>（datestamp，日期/時間）</li>
 <li><code>y</code>（數值）</li>
 </ul>
 <p>它會自動將 <code>ds</code> 欄位辨識為<strong>時間軸</strong>，並用它進行所有的分解與運算。</p>
-<h3 id="2-趨勢trend建模">2. 趨勢（Trend）建模</h3>
+<h1 id="2-趨勢trend建模">2. 趨勢（Trend）建模</h1>
 <p>Prophet 支持兩種主要趨勢建模方式：</p>
 <ul>
 <li><strong>線性趨勢</strong>（可設定 changepoints 轉折點）</li>
 <li><strong>logistic 增長</strong>（適合有上限的數據，如市場飽和）</li>
 </ul>
 <p>Prophet 會在時間軸上自動尋找可能出現轉折（changepoints）的時刻，允許趨勢在不同時期改變成長率。</p>
-<h3 id="3-週期季節性seasonality">3. 週期/季節性（Seasonality）</h3>
+<h1 id="3-週期季節性seasonality">3. 週期/季節性（Seasonality）</h1>
 <p>Prophet 會自動加入<strong>年、週、日</strong>等週期性成分，透過傅立葉級數進行建模。你可以手動新增更多週期（如每月），或調整週期的強度。</p>
-<h3 id="4-節日事件">4. 節日/事件</h3>
+<h1 id="4-節日事件">4. 節日/事件</h1>
 <p>你可以自訂「節日」時間清單（如農曆年、雙 11 等），Prophet 會自動在這些時間點上套用額外的預測效果（如特定天數的異常波動）。</p>
-<h3 id="5-處理缺漏值與不規則間距">5. 處理缺漏值與不規則間距</h3>
+<h1 id="5-處理缺漏值與不規則間距">5. 處理缺漏值與不規則間距</h1>
 <p>Prophet 可直接處理<strong>缺漏資料</strong>與<strong>不等間隔</strong>的時間序列，不需手動補齊時間軸。</p>
-<h3 id="6-時間格式彈性">6. 時間格式彈性</h3>
+<h1 id="6-時間格式彈性">6. 時間格式彈性</h1>
 <p>支援多種時間格式（日期、日期時間、timestamp），Prophet 會自動解析。</p>
-<h3 id="7-可擴展未來的時間軸">7. 可擴展未來的時間軸</h3>
+<h1 id="7-可擴展未來的時間軸">7. 可擴展未來的時間軸</h1>
 <p>你只需告訴 Prophet 要預測幾天/幾週/幾個月後的數值，它會自動根據 trend 和 seasonality 外推時間序列。</p>
 <hr>
-<h2 id="prophet-處理時間序列的步驟python-範例">Prophet 處理時間序列的步驟（Python 範例）</h2>
+<h1 id="prophet-處理時間序列的步驟python-範例">Prophet 處理時間序列的步驟（Python 範例）</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> prophet <span style="color:#f92672">import</span> Prophet
 </span></span><span style="display:flex;"><span>
@@ -221,7 +221,7 @@ y(t) = g(t) + s(t) + h(t) + \epsilon_t
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># 繪圖</span>
 </span></span><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> m<span style="color:#f92672">.</span>plot(forecast)
 </span></span></code></pre></div><hr>
-<h2 id="prophet-vs-lstm時間處理方式比較總結">Prophet vs. LSTM：時間處理方式比較總結</h2>
+<h1 id="prophet-vs-lstm時間處理方式比較總結">Prophet vs. LSTM：時間處理方式比較總結</h1>
 <table>
   <thead>
       <tr>
@@ -276,13 +276,9 @@ y(t) = g(t) + s(t) + h(t) + \epsilon_t
           <td></td>
           <td></td>
       </tr>
-      <tr>
-          <td>##下面實戰</td>
-          <td></td>
-          <td></td>
-      </tr>
   </tbody>
 </table>
+<h1 id="下面實戰">下面實戰</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
 </span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;使用PROPHET 以及LSTM預測總架次數.ipynb
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
