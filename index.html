@@ -224,6 +224,51 @@
     transform: translateY(-4px);
     box-shadow: 0 12px 40px rgba(0,0,0,0.3);
   }
+  /* Fix article card overflow */
+  .featured-post .card-text {
+    max-height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+  }
+  .featured-post .card-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(transparent, #fff);
+  }
+  .featured-post .card-text table,
+  .featured-post .card-text h4,
+  .featured-post .card-text ol,
+  .featured-post .card-text ul {
+    display: none;
+  }
+  .card-body .card-text {
+    max-height: 150px;
+    overflow: hidden;
+    position: relative;
+  }
+  .card-body .card-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(transparent, #fff);
+  }
+  section .card {
+    overflow: hidden;
+  }
+  .featured-post-slider .card.featured-post {
+    overflow: hidden;
+  }
+  .featured-post .card-body {
+    overflow: hidden;
+  }
 </style>
 
 <section class="section-sm">
@@ -250,10 +295,7 @@
                 </div>
                 <a href="https://s0914712.github.io/blog/post-9/"
                   class="h1 font-weight-bold d-block text-dark mb-4 card-title">只靠每天的架次數預測的Prophet與LSTM 模型</a>
-                <p class="card-text"><!-- raw HTML omitted -->
-<p>長短期記憶神經網路</p>
-<p>當我們在理解一件事情的時候，通常不會每次都從頭開始學習，而是透過既有的知識與記憶來理解當下遇到的問題；事件的發生通常具有連續性，也就是一連串的因果關係，或是一個持續不斷變動的結果。在機器學習模型的發展中，引入這種遞歸 (recurrent) 的概念，是遞歸神經網路與其他神經網路模型 (如 CNN) 相比，較為創新的地方。長短期記憶模型則是改善了遞歸神經網路在長期記憶上的一些不足，因為其強大的辨識能力，可以有效的對上下文產生連結，現在已大量運用在自然語言理解 (例如語音轉文字，翻譯，產生手寫文字)，圖像與影像辨識等應用。
-在這邊我先不介紹LSTM的原理，因為這個專案並不是企圖改進LSTM的架構，大家只要知道他是具有理解時間關係的網路結構就可以了，既然prophet 和LSTM 都可以進行時間序列的處理 那我們就使用這兩個做個比較。</p>...</p>
+                <p class="card-text">長短期記憶神經網路（LSTM）具有理解時間序列的能力，結合 Prophet 模型進行每日架次數預測比較。LSTM 改善了遞歸神經網路在長期記憶上的不足，適合用於軍事動態的時間序列分析與預測...</p>
               </div>
             </div>
           </div>
@@ -277,86 +319,7 @@
                 </div>
                 <a href="https://s0914712.github.io/blog/post-1/"
                   class="h1 font-weight-bold d-block text-dark mb-4 card-title">使用MLP分析臺海周邊海、空域動態</a>
-                <p class="card-text"><!-- raw HTML omitted -->
-<p>數據處理在現代資訊系統中至關重要。有效的數據處理能幫助組織從大量數據中提取出有價值的資訊，為後續的決策提供基礎。同時，良好的數據清理、轉換與整合過程能降低錯誤率，增加模型的可靠性。特別是在軍事、金融等高風險領域，數據處理的精確性直接影響任務成敗，以下就數據的清理流程與研究方法進行介紹。</p>
-<h4 id="數據處理">數據處理</h4>
-<p>國防部網站上有109年至113年每天的中共解放軍臺海周邊海、空域動態，雖然經過模糊化，但裡面每天出現的機種類型和區域已足夠進行分類和推理，經過資料的整理，統計出大約有20種機型，每天有不一樣的活動動態(如表一)，每一行代表一個時間點的軍事設備部署情況。對於每一行數據，程序創建一個圖，其中節點代表不同類型的軍事設備（如戰鬥機、轟炸機等），節點的值表示該設備的活動的區域代號。我們把它整理成CSV文件，藉由pandas的dataframe函式庫進行分析。</p>
-<table>
-  <thead>
-      <tr>
-          <th>DATE</th>
-          <th>J10</th>
-          <th>J11</th>
-          <th>J16</th>
-          <th>Y9EW</th>
-          <th>Y8EW</th>
-          <th>Y8ELINT</th>
-          <th>Y8ASW</th>
-          <th>Y8REC</th>
-          <th>Y20</th>
-          <th>BZK</th>
-          <th>WZ7</th>
-          <th>Z9</th>
-          <th>Y9CC</th>
-          <th>SU30</th>
-          <th>H6</th>
-          <th>JH7</th>
-          <th>TB001</th>
-          <th>CH4</th>
-          <th>GJ2</th>
-          <th>KJ500</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>0601</td>
-          <td>2</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>3</td>
-          <td>0</td>
-          <td>0</td>
-          <td>2</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>0602</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>3</td>
-          <td>3</td>
-          <td>0</td>
-          <td>2</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-      </tr>
-  </tbody>
-</table>
-<p>表一：整理後的資料集的一部分</p>...</p>
+                <p class="card-text">數據處理在現代資訊系統中至關重要。有效的數據處理能幫助組織從大量數據中提取出有價值的資訊，為後續的決策提供基礎。特別是在軍事、金融等高風險領域，數據處理的精確性直接影響任務成敗。利用 MLP 分析臺海周邊約 20 種機型的活動動態...</p>
               </div>
             </div>
           </div>
@@ -380,34 +343,31 @@
                 </div>
                 <a href="https://s0914712.github.io/blog/post-2/"
                   class="h1 font-weight-bold d-block text-dark mb-4 card-title">使用Prophet 預測週期方法</a>
-                <p class="card-text"><!-- raw HTML omitted -->
-<p>認識 Prophet
-Prophet 是一個由 Facebook Core Data Science Team 發表的開源代碼庫，用於時間序列預測，基於 Python 和 R 語言。相較於自行訓練時間序列預測模型，Prophet 的一些優點如下：‌</p>...</p>
+                <p class="card-text">Prophet 是由 Facebook Core Data Science Team 發表的開源時間序列預測工具，基於 Python 和 R 語言，用於預測軍事動態週期...</p>
               </div>
             </div>
           </div>
         </article>
-        
+
         <article class="card featured-post">
           <div class="row no-gutters align-items-center">
             <div class="col-md-5">
-              
+
               <img src="https://s0914712.github.io/images/featured-post/post-3.jpg" class="card-img" alt="使用機器學習 預測軍事動態-西南空域篇">
-              
+
             </div>
             <div class="col-md-6 offset-md-1">
               <div class="card-body">
                 <div class="mb-3 post-meta">
                   <span>By Jeremy Chen</span>
-                  
+
                   <span class="border-bottom border-primary px-2 mx-1"></span>
                   <span>29 October 2024</span>
-                  
+
                 </div>
                 <a href="https://s0914712.github.io/blog/post-3/"
                   class="h1 font-weight-bold d-block text-dark mb-4 card-title">使用機器學習 預測軍事動態-西南空域篇</a>
-                <p class="card-text"><!-- raw HTML omitted -->
-<p>Prophet 是一個由 Facebook Core Data Science Team 發表的開源代碼庫，用於時間序列預測，基於 Python 和 R 語言。相較於自行訓練時間序列預測模型，Prophet 的一些優點如下：‌</p>...</p>
+                <p class="card-text">使用 Prophet 等機器學習方法，針對臺灣西南空域的軍事動態進行時間序列預測分析，探索解放軍活動規律與趨勢...</p>
               </div>
             </div>
           </div>
@@ -512,15 +472,7 @@ Prophet 是一個由 Facebook Core Data Science Team 發表的開源代碼庫，
                   <span>01 December 2024</span>
                   
                 </div>
-                <p class="card-text"><!-- raw HTML omitted -->
-<p>##歷史典故：科西拉、科林斯與雅典
-在古希臘世界的漫長歷史長河中，有一個關於權力、野心和命運的故事，被記錄在修昔底德的《伯羅奔尼撒戰爭史》中，這個故事猶如一面映照現代國際政治的明鏡。
-科西拉，這個位於愛奧尼亞海的小島，原本只是科林斯強大帝國的一個邊陲殖民地。母邦與殖民地之間的關係如同君主與臣服領地，看似穩固，實則暗潮洶湧。科西拉憑藉其得天獨厚的地理位置和日益強大的海軍實力，逐漸萌生了掙脫科林斯控制的野心。
-這是一個關於權力平衡的永恒故事。科西拉並非一味盲目反抗，而是在國際政治的棋盤上審慎地計算著每一步。她意識到單憑自身力量難以完全擺脫科林斯的陰影，於是將目光投向了當時正在崛起的雅典。這一戰略聯盟不僅是尋求生存之道，更是一場精心設計的政治算計。
-雅典，這個以民主和文明著稱的城邦，並非出於純粹的慈善，而是敏銳地捕捉到了一個牽制科林斯的絕佳機會。兩個城邦的結盟，表面上是保護與被保護的關係，實則是一場複雜的政治角力。雅典的軍事支持不僅是對科西拉的救贖，更是對科林斯實力的一記重擊。
-科林斯如何看待這一切？作為一個曾經的霸主，他們視科西拉的背叛如同對尊嚴的赤裸裸侮辱。這種背叛觸及的不僅是領土，更是一個帝國的榮耀與威信。科林斯被迫做出回應，他們明白，縱容科西拉的行為，意味著帝國影響力的削弱。
-這場看似局部的衝突，實則埋下了伯羅奔尼撒戰爭的種子。兩個強權——雅典與科林斯，因為一個小島的命運而最終走向全面對抗。這不僅是一場軍事衝突，更是一場關於主權、影響力和國際秩序的根本性較量。
-在古希臘的世界中，有一個小島科西拉和一個强大的城邦科林斯之間的故事，彷彿在訴說著當今台灣與中國之間的複雜命運。</p></p>
+                <p class="card-text">修昔底德的陷阱：在古希臘世界中，科西拉與科林斯之間的權力角逐，以及雅典的介入，最終埋下了伯羅奔尼撒戰爭的種子。這個歷史典故彷彿映照著當今台灣與中國之間的複雜命運...</p>
                 <a href="https://s0914712.github.io/blog/post-5/" class="btn btn-outline-primary">read more</a>
               </div>
             </article>
@@ -544,8 +496,7 @@ Prophet 是一個由 Facebook Core Data Science Team 發表的開源代碼庫，
                   <span>01 December 2024</span>
                   
                 </div>
-                <p class="card-text"><!-- raw HTML omitted -->
-<p>2024 年 12 月 13 日，華盛頓智庫 CSIS 公布了一份名為《面對世界末日的核威懾》的兵棋推演報告，探討中美於臺灣衝突情境下使用核武與外交手段的可能後果。不少媒體過度強調「誰勝誰負」，忽略了這場研究真正的重點：核戰與外交決策的風險。</p></p>
+                <p class="card-text">2024 年華盛頓智庫 CSIS 公布了《面對世界末日的核威懾》兵棋推演報告，探討中美於臺灣衝突情境下使用核武與外交手段的可能後果，聚焦核戰與外交決策的風險...</p>
                 <a href="https://s0914712.github.io/blog/post-6/" class="btn btn-outline-primary">read more</a>
               </div>
             </article>
@@ -569,11 +520,7 @@ Prophet 是一個由 Facebook Core Data Science Team 發表的開源代碼庫，
                   <span>01 December 2024</span>
                   
                 </div>
-                <p class="card-text"><!-- raw HTML omitted -->
-<ol>
-<li>概述 (What &amp; Why)</li>
-</ol>
-<p>NetCDF 是一套為「科學陣列型資料」設計的 <strong>自描述 (self-describing)</strong>、<strong>跨平台 (portable)</strong>、<strong>可擴充 (extensible)</strong> 的資料模型與檔案格式，同時也包含一組 API 函式庫。典型應用領域包含：氣象、海洋、氣候、遙測、模式模擬（如大氣模式、海流、浪場）等。</p></p>
+                <p class="card-text">NetCDF 是一套為科學陣列型資料設計的自描述、跨平台、可擴充資料格式，典型應用包含氣象、海洋、氣候、遙測與模式模擬等。本文介紹如何從零開始建立人員落水軌跡預測模型...</p>
                 <a href="https://s0914712.github.io/blog/post-8/" class="btn btn-outline-primary">read more</a>
               </div>
             </article>
@@ -597,8 +544,7 @@ Prophet 是一個由 Facebook Core Data Science Team 發表的開源代碼庫，
                   <span>01 December 2024</span>
                   
                 </div>
-                <p class="card-text"><!-- raw HTML omitted -->
-<p>海軍司令唐華日前接受《經濟學人》訪問時提到，中共正企圖利用「蟒蛇策略」（<em>Anaconda Strategy</em>）壓縮臺灣，並隨時準備執行封鎖。「蟒蛇」一詞可追溯至美國內戰（1861–1865）期間，插畫家 J. B. 艾略特創作了一幅名為《史考特的大蟒蛇計畫》（<em>Scott&rsquo;s Great Snake</em>）的插畫，諷刺北方聯邦指揮官溫菲爾德·史考特（Winfield Scott）提出的戰爭計畫。</p></p>
+                <p class="card-text">海軍司令唐華接受《經濟學人》訪問時提到，中共正企圖利用「蟒蛇策略」（Anaconda Strategy）壓縮臺灣，並隨時準備執行封鎖。此策略可追溯至美國內戰時期的史考特大蟒蛇計畫...</p>
                 <a href="https://s0914712.github.io/blog/post-7/" class="btn btn-outline-primary">read more</a>
               </div>
             </article>
@@ -622,9 +568,7 @@ Prophet 是一個由 Facebook Core Data Science Team 發表的開源代碼庫，
                   <span>29 November 2024</span>
                   
                 </div>
-                <p class="card-text"><!-- raw HTML omitted -->
-<p>我們蒐集到日本防衛省統合幕僚監部 下載 2023-2024年經過日本的航母動態 整理成csv檔
-資料集長得像下面這樣</p></p>
+                <p class="card-text">蒐集日本防衛省統合幕僚監部 2023-2024 年經過日本的航母動態資料，使用機器學習方法進行分析與預測...</p>
                 <a href="https://s0914712.github.io/blog/post-4/" class="btn btn-outline-primary">read more</a>
               </div>
             </article>
