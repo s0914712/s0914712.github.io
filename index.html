@@ -210,6 +210,22 @@
       </div>
     </div>
 
+    <!-- RUNKU Big Banner -->
+    <div class="row justify-content-center" style="margin-top:20px;">
+      <div class="col-lg-10">
+        <a href="https://s0914712.github.io/RUNKU/" class="runku-banner-link" style="text-decoration:none;display:block;">
+          <div class="runku-banner">
+            <div class="runku-banner-icon">🎮📚</div>
+            <div class="runku-banner-text">
+              <h3 class="runku-banner-title">RUNKU 單字遊戲樂園</h3>
+              <p class="runku-banner-sub">用遊戲幫小朋友背英文單字 · 六種學習模式 · 免安裝免登入</p>
+              <span class="runku-banner-cta">立即開始遊玩 &nbsp;▶</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -219,6 +235,58 @@
     border-color: rgba(255,255,255,0.3) !important;
     transform: translateY(-4px);
     box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  }
+  /* RUNKU big banner */
+  .runku-banner {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(135deg, #f97316 0%, #f43f5e 50%, #8b5cf6 100%);
+    border-radius: 22px;
+    padding: 34px 40px;
+    box-shadow: 0 12px 36px rgba(244, 63, 94, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .runku-banner-link:hover .runku-banner {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 48px rgba(244, 63, 94, 0.5);
+  }
+  .runku-banner-icon {
+    font-size: 4.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .runku-banner-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 8px;
+    letter-spacing: 1px;
+  }
+  .runku-banner-sub {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 0 14px;
+    line-height: 1.6;
+  }
+  .runku-banner-cta {
+    display: inline-block;
+    background: #fff;
+    color: #e11d48;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 10px 26px;
+    border-radius: 999px;
+  }
+  @media (max-width: 767px) {
+    .runku-banner {
+      flex-direction: column;
+      text-align: center;
+      gap: 18px;
+      padding: 30px 24px;
+    }
+    .runku-banner-title { font-size: 1.7rem; }
+    .runku-banner-sub { font-size: 0.95rem; }
   }
   /* Fix article card overflow */
   .featured-post .card-text {
